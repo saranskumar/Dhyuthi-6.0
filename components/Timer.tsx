@@ -11,7 +11,7 @@ interface TimeLeft {
 
 export const Timer = () => {
   const calculateTimeLeft = (): TimeLeft => {
-    const eventDate: Date = new Date("2024-10-04T16:30:00"); // Replace with your event date
+    const eventDate: Date = new Date("2025-10-10T16:30:00"); // Replace with your event date
     const now: Date = new Date();
     const difference: number = eventDate.getTime() - now.getTime(); // Use getTime() to get the timestamp in milliseconds
 

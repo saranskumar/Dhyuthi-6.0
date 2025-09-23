@@ -24,7 +24,7 @@ export const Fotter = () => {
             />
 
             <button className="text-2xl font-semibold leading-6 bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d] bg-clip-text text-transparent">
-              Dhyuthi 5.0
+              Dhyuthi 6.0
             </button>
           </a>
           <div className="mt-16 text-left">
@@ -91,7 +91,7 @@ export const Fotter = () => {
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
           <a href="https://flowbite.com/" className="hover:underline">
-            Dhyuthi 5.0
+            Dhyuthi 6.0
           </a>
           . All Rights Reserved.
         </span>
