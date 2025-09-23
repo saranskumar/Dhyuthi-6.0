@@ -10,9 +10,9 @@ import Tracks from "../components/Tracks";
 export default function Home() {
   return (
     <div>
-      <Hero />
-      <About />
       <Timer />
+      <Hero/>
+      <About />
       <Tracks />
       <Event />
       <Gallery />

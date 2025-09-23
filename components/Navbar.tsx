@@ -20,7 +20,7 @@ export const Navbar = () => {
             offset={0}
             duration={500}
           >
-            <button className="text-2xl font-semibold leading-6 bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d] bg-clip-text text-transparent">
+            <button className="text-2xl font-semibold leading-6 bg-gradient-to-r  from-[#cc0777] via-[#ef9a06] to-[#f11da3] bg-clip-text text-transparent">
               `Dhyuthi 6.0`
             </button>
           </Link>

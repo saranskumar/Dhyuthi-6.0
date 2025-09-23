@@ -31,7 +31,7 @@ const About = () => {
           </p>
           <div className="flex-1 flex justify-center items-center ">
             <h2 className="font-palanquin text-4xl mb-10 font-bold bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d] bg-clip-text text-transparent lg:max-w-lg">
-              October 04 | 05 | 06
+              October 10 | 11 | 12
             </h2>
           </div>
         </div>
