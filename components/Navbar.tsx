@@ -21,7 +21,7 @@ export const Navbar = () => {
             duration={500}
           >
             <button className="text-2xl font-semibold leading-6 bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d] bg-clip-text text-transparent">
-              Dhyuthi 6.0
+              Dhyuthi 5.0
             </button>
           </Link>
         </div>
@@ -151,7 +151,7 @@ export const Navbar = () => {
               }}
             >
               <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                Dhyuthi 6.0
+                Dhyuthi 5.0
               </button>
             </Link>
             <button
