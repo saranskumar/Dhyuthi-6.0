@@ -43,13 +43,13 @@ const Venue = () => {
             </div>
             <div>
               <h2 className="flex items-center text-lg font-bold">
-                <span className="text-orange-500 mr-2">📞</span>
+                <span className="text-red-500 mr-2">📞</span>
                 Call
               </h2>
-              <p className="pt-2">Nandagopan G</p>
-              <a href="tel:+917306702435"> +91 7306702435</a>
-              <p className="pt-2">Geethu S Santhosh</p>
-              <a href="tel:+918075298464"> +91 8075298464</a>
+              <p className="pt-2">Alfy Joseph Kunjumon</p>
+              <a href="tel:+91 9567694707"> +91 9567694707</a>
+              <p className="pt-2">Sneha Bijee</p>
+              <a href="tel:+918590499957"> +91 8590499957</a>
             </div>
           </div>
         </div>
