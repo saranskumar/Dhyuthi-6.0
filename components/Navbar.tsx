@@ -272,14 +272,7 @@ export const Navbar = () => {
                   </button>
                 </Link>
               </div>
-              <div className="py-6">
-                <a
-                  href="/track"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700"
-                >
-                  Register Now
-                </a>
-              </div>
+              
             </div>
           </div>
         </DialogPanel>
