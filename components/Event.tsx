@@ -28,7 +28,7 @@ const Event = () => {
               onClick={() => handleTabChange("day1")}
               className={`inline-flex items-center px-4 py-3 w-full rounded-lg ${
                 activeTab === "day1"
-                  ? "text-white bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d] "
+                  ? "text-white bg-gradient-to-r  from-[#c09df3] via-[#8242dc] to-[#9348fc] "
                   : "bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100"
               }`}
             >
@@ -40,7 +40,7 @@ const Event = () => {
               onClick={() => handleTabChange("day2")}
               className={`inline-flex items-center px-4 py-3 w-full rounded-lg ${
                 activeTab === "day2"
-                  ? "text-white bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d]"
+                  ? "text-white bg-gradient-to-r  from-[#c09df3] via-[#8242dc] to-[#9348fc]"
                   : "bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100"
               }`}
             >
@@ -52,7 +52,7 @@ const Event = () => {
               onClick={() => handleTabChange("day3")}
               className={`inline-flex items-center px-4 py-3 w-full rounded-lg ${
                 activeTab === "day3"
-                  ? "text-white bg-gradient-to-r from-[#efb98f] via-[#ef9a06] to-[#f1871d]"
+                  ? "text-white bg-gradient-to-r  from-[#c09df3] via-[#8242dc] to-[#9348fc]"
                   : "bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100"
               }`}
             >

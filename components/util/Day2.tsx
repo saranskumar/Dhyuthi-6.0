@@ -48,7 +48,7 @@ const Day2 = () => {
         <ol className="relative border-s border-gray-700">
           {item.map((list, index) => (
             <li className="mb-10 ms-6" key={index}>
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8 ring-gray-900 bg-[#ef9a06]">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8 ring-gray-900 bg-[#9348fc]">
                 <svg
                   className="w-2.5 h-2.5 text-[#ffffff]"
                   aria-hidden="true"

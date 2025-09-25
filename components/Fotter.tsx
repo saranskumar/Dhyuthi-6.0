@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../assets/images/logo.png";
 import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
 
 export const Fotter = () => {
@@ -12,19 +11,9 @@ export const Fotter = () => {
             href="#"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
-            <Image
-              src={logo}
-              alt=""
-              loading="lazy"
-              width="45"
-              height="45"
-              decoding="async"
-              data-nimg="1"
-              className=" object-contain rounded-md"
-            />
-
-            <button className="text-2xl font-semibold leading-6 bg-gradient-to-r from-[#cc0777] via-[#ef9a06] to-[#f11da3] bg-clip-text text-transparent">
-              Dhyuthi 6.0
+            
+             <button className="text-2xl font-semibold leading-6 text-[#5E2B99]">
+                   <Image alt='logo' src='/logo2.png' width={100} height={80}></Image>
             </button>
           </a>
           <div className="mt-16 text-left">

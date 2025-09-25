@@ -30,7 +30,7 @@ const About = () => {
             {about_event}
           </p>
           <div className="flex-1 flex justify-center items-center ">
-            <h2 className="font-palanquin text-4xl mb-10 font-bold bg-gradient-to-r from-[#c09df3] via-[#8242dc] to-[#9348fc] bg-clip-text text-transparent lg:max-w-lg">
+            <h2 className="font-palanquin text-4xl mb-10 font-bold bg-[#9348fc]  bg-clip-text text-transparent lg:max-w-lg">
               October 10 | 11 | 12
             </h2>
           </div>
