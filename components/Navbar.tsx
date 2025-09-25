@@ -152,7 +152,7 @@ export const Navbar = () => {
               }}
             >
               <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-              <Image alt='logo' src='/logo2.png' width={100} height={80}></Image>
+              <Image alt='logo' src='/logo2.png' width={80} height={60}></Image>
             
               </button>
             </Link>
