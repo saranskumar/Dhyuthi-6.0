@@ -31,7 +31,7 @@ const Venue = () => {
             </div>
             <div className="mb-6">
               <h2 className="flex items-center text-lg font-bold">
-                <span className="text-orange-500 mr-2">✉️</span>
+                <span>✉️</span>
                 Email
               </h2>
               <a

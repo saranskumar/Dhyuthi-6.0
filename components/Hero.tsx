@@ -7,9 +7,9 @@ const Hero = () => {
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none  md:text-5xl lg:text-6xl text-white">
           Dhyuthi 6.0
         </h1>
-        <a className="inline-flex justify-between items-center mt-8 py-1 px-1 pr-4 mb-7 text-sm  rounded-full text-white bg-gradient-to-r from-[#cc0777] via-[#ef9a06] to-[#f11da3]">
+        <a className="inline-flex justify-between items-center mt-8 py-1 px-1 pr-4 mb-7 text-sm  rounded-full text-white bg-[#A566FF]">
           <span className="text-xl font-medium">
-           Coming Soon!!
+           Coming Soon
           </span>
         </a>
         

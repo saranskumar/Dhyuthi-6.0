@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/logo.png";
 //hidden md:block
 const About = () => {
   const about_event = `Dhyuthi, the flagship event of IEEE SCT SB, is back for its 6th edition. This highly anticipated event will feature three distinct tracks that delve into relevant topics and showcase technologies with significant growth potential, offering participants a chance to explore cutting-edge advancements in various fields. Dhyuthi is designed to provide a rich experience, packed with technical workshops where attendees can gain hands-on skills as well as participate in competitions that encourage innovation and teamwork. Dhyuthi 6.0 fosters collaboration and innovation, offering diverse activities that promote personal growth and academic discourse, solidifying its status as a highly anticipated IEEE event.`;
@@ -15,8 +15,8 @@ const About = () => {
             src={logo}
             alt=""
             loading="lazy"
-            width="350"
-            height="280"
+            width="500"
+            height="635"
             decoding="async"
             data-nimg="1"
             className=" object-contain rounded-md"
