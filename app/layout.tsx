@@ -3,8 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Fotter } from "@/components/Fotter";
-import VantaWavesBackground from "@/components/VantaWavesBackground";
+import VantaWavesBackground from "@/components/VantaWavesBackground"; // Use Net or Waves
 
+// Use fonts and their variables
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -28,13 +29,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ position: "relative", minHeight: "100vh" }}>
-  <VantaWavesBackground />
-  <Navbar />
-  <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
-  <Fotter />
-</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ position: "relative", minHeight: "100vh" }}
+      >
+        {/* Vanta Background */}
+        <VantaWavesBackground />
 
+        {/* Page Content */}
+        <Navbar />
+        <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
+        <Fotter />
+      </body>
     </html>
   );
 }
