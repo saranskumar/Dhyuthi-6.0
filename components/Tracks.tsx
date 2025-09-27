@@ -7,6 +7,7 @@ import traverse from "../assets/images/tr.png";
 
 const Tracks = () => {
   return (
+    
     <div id="page2" className="w-full flex justify-center items-center ">
       <div className="md:w-[80%] m-3 mt-16 justify-center items-center">
         <h2 className=" font-palanquin text-4xl mb-10 font-bold bg-[#9348fc] bg-clip-text text-transparent">
