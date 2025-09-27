@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Fotter } from "@/components/Fotter";
+import VantaWavesBackground from "@/components/VantaWavesBackground";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,13 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
-        <Fotter />
-      </body>
+      <body style={{ position: "relative", minHeight: "100vh" }}>
+  <VantaWavesBackground />
+  <Navbar />
+  <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
+  <Fotter />
+</body>
+
     </html>
   );
 }

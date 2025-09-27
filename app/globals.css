@@ -7,26 +7,16 @@
   --foreground: #ededed;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
   color: var(
     --foreground,
     #e0e0e0
   ); /* Light foreground text for dark background */
-  background: conic-gradient(
-        from 90deg at 1px 1px,
-        #00000000 90deg,
-        rgba(249, 234, 234, 0.1) 0 /* Lighter grid pattern for dark theme */
-      )
-      0 0/70px 70px,
-    #0B0B0B; /* Dark background color */
+  background: #0B0B0B; /* Simple dark background - Vanta will overlay this */
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll from Vanta */
 }
 
 @layer utilities {
@@ -37,4 +27,3 @@ body {
     @apply text-purple-400 bg-purple-900/30;
   }
 }
-
