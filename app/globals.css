@@ -34,3 +34,236 @@ body {
     text-wrap: balance;
   }
 }
+
+/* glass + liquid animated background */
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: saturate(130%) blur(8px);
+  transition: transform 700ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease, opacity 420ms ease;
+  transform: perspective(900px) rotateY(6deg) translateY(8px);
+  opacity: 0.92;
+  position: relative;
+  border-radius: 12px;
+}
+.glass-card[data-active="true"] {
+  transform: perspective(900px) rotateY(0deg) translateY(0px) translateZ(0);
+  opacity: 1;
+  box-shadow: 0 26px 80px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* animated liquid background layer */
+.liquid-bg {
+  background: linear-gradient(120deg, rgba(124,58,237,0.12), rgba(96,165,250,0.08), rgba(52,211,153,0.06));
+  filter: blur(28px) saturate(140%);
+  transform: translate3d(-10%, -10%, 0) scale(1.1);
+  animation: liquidShift 8s linear infinite, slowFloat 6s ease-in-out infinite;
+  opacity: 0.85;
+}
+@keyframes liquidShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes slowFloat {
+  0% { transform: translate3d(-8%, -10%, 0) scale(1.06) rotateZ(-1deg); }
+  50% { transform: translate3d(-12%, -6%, 0) scale(1.12) rotateZ(1deg); }
+  100% { transform: translate3d(-8%, -10%, 0) scale(1.06) rotateZ(-1deg); }
+}
+
+/* Remove previous timeline styles and replace with these */
+
+/* Day heading styles */
+.day-heading-wrapper {
+  position: relative;
+  z-index: 30;
+}
+
+/* Clean up old styles that might conflict */
+.day-heading {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Timeline spacing adjustments */
+.timeline-item {
+  @apply relative flex items-start gap-6 py-3;
+  margin-left: 1.5rem;
+}
+
+/* Ensure proper z-index stacking */
+.timeline-item:hover {
+  z-index: 20;
+}
+
+/* Update the timeline dot size for better proportion with day markers */
+.timeline-dot {
+  @apply w-2.5 h-2.5 rounded-full border transition-all duration-300;
+  border-width: 1.5px;
+}
+
+.timeline-card {
+  @apply relative overflow-hidden rounded-lg border border-white/[0.03] bg-white/[0.01] 
+         transition-all duration-300 ease-out;
+}
+
+/* Hover effects */
+.timeline-item:hover .timeline-dot {
+  @apply scale-125;
+  box-shadow: 0 0 20px var(--accent, rgba(124,58,237,0.3));
+}
+
+.timeline-card {
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+}
+
+.timeline-item:hover .timeline-card {
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 
+    0 20px 40px -20px rgba(0,0,0,0.3),
+    0 0 20px rgba(124,58,237,0.06);
+}
+
+/* Remove scroll-based animations */
+.animate-fadeIn {
+  animation: none;
+}
+
+[data-active="true"] {
+  animation: none;
+}
+
+/* Path styles */
+.timeline-path {
+  vector-effect: non-scaling-stroke;
+  opacity: 0.5;
+}
+
+/* Clean up any conflicting glass card styles */
+.glass-card {
+  @apply bg-white/[0.02] backdrop-blur-md;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.glass-card[data-active="true"] {
+  @apply bg-white/[0.03];
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 
+    0 20px 60px -15px rgba(0,0,0,0.3),
+    0 0 40px rgba(124,58,237,0.06);
+}
+
+/* small responsiveness tweak so card stays to the right of centerline */
+@media (min-width: 768px) {
+  li > .glass-card {
+    position: relative;
+    left: calc(50% + 28px);
+    max-width: 46rem;
+  }
+}
+@media (max-width: 767px) {
+  li > .glass-card {
+    left: 0;
+    max-width: 100%;
+  }
+}
+
+/* checkpoint button mobile/desktop sizing */
+@media (min-width: 768px) {
+  .glass-card {
+    max-width: 70rem;
+  }
+  .glass-card[data-active="true"] {
+    box-shadow: 0 30px 90px rgba(2,6,23,0.7);
+  }
+}
+
+/* timeline liquid background (separate from cards) */
+.timeline-liquid {
+  position: absolute;
+  left: 4%;
+  right: 0;
+  top: 8%;
+  bottom: 6%;
+  border-radius: 20px;
+  background: linear-gradient(120deg, rgba(124,58,237,0.08), rgba(96,165,250,0.05), rgba(255,255,255,0.02));
+  filter: blur(28px) saturate(130%);
+  transform: translateZ(0) scale(1.02);
+  animation: liquidShift 10s linear infinite alternate;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: -1;
+}
+
+/* ensure .glass-card is clean and separated from the liquid layer */
+.glass-card {
+  background: rgba(255,255,255,0.9); /* mostly white card */
+  /* slight purple tint via CSS variable set inline in component */
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  border-radius: 14px;
+  padding: 0.9rem;
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 360ms ease, opacity 280ms;
+  transform: perspective(900px) rotateY(6deg) translateY(6px) scale(1);
+  will-change: transform, box-shadow;
+  position: relative;
+  border: 1px solid rgba(20,18,30,0.06);
+}
+
+/* accent glow uses custom property --accent set on element style */
+.glass-card[data-active="true"] {
+  transform: perspective(900px) rotateY(0deg) translateY(0px) scale(1.02);
+  box-shadow:
+    0 36px 110px rgba(124,58,237,0.14),
+    0 8px 40px color-mix(in srgb, var(--accent) 24%, rgba(0,0,0,0.3));
+  z-index: 30;
+}
+
+/* subtle colored outline glow for focused card */
+.glass-card[data-active="true"]::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, transparent, transparent);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--accent) 16%, rgba(0,0,0,0.0));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* checkpoint focus/glow */
+.timeline-checkpoint {
+  display: inline-block;
+  border-radius: 9999px;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms, background 260ms, border 260ms;
+  will-change: transform, box-shadow;
+  z-index: 40;
+}
+.timeline-checkpoint:hover {
+  transform: scale(1.18);
+}
+
+/* keep SVG path subtle and smooth */
+svg path {
+  vector-effect: non-scaling-stroke;
+}
+svg path[stroke-width="12"] { filter: blur(0.6px); opacity: 0.85; }
+svg path[stroke-width="5"] { transition: stroke-dashoffset 420ms cubic-bezier(.2,.9,.2,1); }
+
+/* Day heading */
+.timeline-day-heading {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.12), rgba(96,165,250,0.06));
+  color: #efeefe;
+  font-weight: 700;
+  border: 1px solid rgba(124,58,237,0.08);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+/* responsiveness */
+@media (min-width: 768px) {
+  .glass-card { max-width: 70rem; }
+}

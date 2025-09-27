@@ -12,7 +12,7 @@ const Hero = () => {
       width={1360}
       height={322}
     className="mx-auto  w-full shadow-xl flex flex-col p-4  rounded-lg
-                hover:scale-75 transform transition-transform duration-300 ease-in-out"   // centers the logo horizontally
+                hover:scale-110 transform transition-transform duration-300 ease-in-out"   // centers the logo horizontally
   />
 
   <a className="inline-flex justify-center items-center   px-1 pr-4 mb-7 w-full shadow-xl ">
@@ -21,7 +21,7 @@ const Hero = () => {
       src="/comingsoon.png"
       width={453}
     height={107}
-      className="mx-autow-full shadow-xl flex flex-col p-4 my-16 rounded-lg
+      className="mx-auto  shadow-xl flex flex-col p-4 my-16 rounded-lg
                 hover:scale-103 transform transition-transform duration-300 ease-in-out"  // centers the second image inside the link
     />
   </a>
