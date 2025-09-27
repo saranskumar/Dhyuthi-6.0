@@ -32,39 +32,40 @@ const PreEvents = () => {
         <div className="flex flex-col lg:flex-row lg:gap-8 lg:mb-12">
           {/* Carousel Posters */}
           <div className="relative w-full lg:w-1/2 mb-12 lg:mb-0 flex justify-center items-center">
-            <div className="w-full max-w-[270px] h-[337.5px] relative overflow-hidden rounded-lg">
-              {posters.map((poster, index) => (
-                <div
-                  key={index}
-                  className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ${
-                    index === current ? "opacity-100 z-20" : "opacity-0 z-10"
-                  }`}
-                >
-                  <Image
-                    src={poster}
-                    alt={`Pre-event Poster ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover" // Fill the container
-                    className="rounded-lg"
-                  />
-                </div>
-              ))}
-            </div>
+  {/* Full container for poster */}
+  <div className="w-full relative overflow-hidden rounded-lg aspect-[4/5]">
+    {posters.map((poster, index) => (
+      <div
+        key={index}
+        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ${
+          index === current ? "opacity-100 z-20" : "opacity-0 z-10"
+        }`}
+      >
+        <Image
+          src={poster}
+          alt={`Pre-event Poster ${index + 1}`}
+          fill
+          style={{ objectFit: "cover" }} // fill the div entirely
+        />
+      </div>
+    ))}
+  </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full"
-            >
-              &#10094;
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full"
-            >
-              &#10095;
-            </button>
-          </div>
+  {/* Navigation Arrows */}
+  <button
+    onClick={prevSlide}
+    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full z-30"
+  >
+    &#10094;
+  </button>
+  <button
+    onClick={nextSlide}
+    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full z-30"
+  >
+    &#10095;
+  </button>
+</div>
+
 
           {/* Text Content */}
           <div className="flex flex-col justify-center w-full lg:w-1/2" data-aos="fade-left">
