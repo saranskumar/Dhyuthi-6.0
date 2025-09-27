@@ -71,10 +71,10 @@ const VantaNetBackground = () => {
             minWidth: 200,
             scale: 1,
             scaleMobile: 1,
-            color: 0x6103c0,
-            backgroundColor: 0x1a1a1a,
-            points: 11,
-            maxDistance: 19,
+            color: 0xb86ee5,
+            backgroundColor: 0x151518,
+            points: 18,
+            maxDistance: 10,
             spacing: 17,
           });
         }
