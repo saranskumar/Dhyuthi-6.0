@@ -2,8 +2,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
+
 const PreEvents = () => {
   const posters = ["/1.jpg", "/2.jpg", "/3.jpg"];
+const links = [
+  "https://tinyurl.com/DoodleQuest1",
+  "https://bit.ly/trail_Quest",
+  "https://tinyurl.com/StrikezoneDhyuthi",
+];
+
   const [current, setCurrent] = useState(0);
 
   // Auto-scroll every 3 seconds
@@ -41,12 +48,16 @@ const PreEvents = () => {
           index === current ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
       >
-        <Image
+        <a href={links[index]} target="_blank" rel="noopener noreferrer">
+          <Image
           src={poster}
           alt={`Pre-event Poster ${index + 1}`}
           fill
           style={{ objectFit: "cover" }} // fill the div entirely
-        />
+          />
+        </a>
+
+      
       </div>
     ))}
   </div>
