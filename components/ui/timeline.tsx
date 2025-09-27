@@ -151,7 +151,7 @@ export default function Timeline({ data }: { data: Item[] }) {
             return (
               <div
                 key={i}
-                ref={(el) => (itemRefs.current[i] = el)}
+                ref={(el) => { if (el) itemRefs.current[i] = el; }}
                 className="timeline-item group"
               >
                 {/* Event dot */}

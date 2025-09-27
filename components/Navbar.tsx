@@ -1,161 +1,81 @@
 "use client";
 
 import { useState } from "react";
-import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-scroll";
 import Image from 'next/image';
 
+const navLinks = [
+  { to: "page0", label: "Home" },
+  { to: "page1", label: "About" },
+  { to: "page2", label: "Tracks" },
+  { to: "page4", label: "Schedule" },
+  { to: "page8", label: "Gallery" },
+  { to: "page6", label: "FAQs" },
+  { to: "page5", label: "Contact" },
+];
+
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="  backdrop-blur-xl fixed w-full z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        <div className="flex lg:flex-1">
-          <span className="sr-only">Your Company</span>
+    <header className="bg-black/30 backdrop-blur-xl fixed w-full z-50">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between h-16 sm:h-20 px-6 lg:px-8">
+        {/* Logo */}
+        <div className="flex-shrink-0">
           <Link
-            activeClass="active"
             to="page0"
             spy={true}
             smooth={true}
-            offset={0}
+            offset={-80}
             duration={500}
+            className="flex items-center cursor-pointer"
           >
-            <button className="text-2xl font-semibold leading-6 text-[#5E2B99]">
-              <Image alt='logo' src='/logo2.png' width={100} height={80}></Image>
-            </button>
+            <Image alt="YESS Logo" src="/logo2.png" width={50} height={50} className="h-8 w-auto sm:h-10 transition-all" />
+            
           </Link>
         </div>
-        <div className="flex lg:hidden">
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex space-x-2 xl:space-x-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              activeClass="active-nav"
+              to={link.to}
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              className="px-3 sm:px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 text-white hover:text-purple-400 hover:bg-purple-900/20 cursor-pointer"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
           <button
-            type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300"
+            className="relative z-50 inline-flex items-center justify-center p-2 text-white transition-colors duration-200 rounded-md sm:p-3 hover:text-purple-400 hover:bg-purple-900/20 focus:outline-none"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+            <Bars3Icon className="w-6 h-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <Link
-            activeClass="active"
-            to="page1"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              About
-            </button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="page2"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              Tracks
-            </button>
-          </Link>
-          {/* <Link
-            activeClass="active"
-            to="page3"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              Events
-            </button>
-          </Link> */}
-          <Link
-            activeClass="active"
-            to="page4"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              Schedule
-            </button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="page8"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              Gallery
-            </button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="page6"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              FAQs
-            </button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="page5"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button className="text-sm font-semibold leading-6 text-gray-100">
-              Contact
-            </button>
-          </Link>
-        </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="/track"
-            className="text-sm font-semibold leading-6 text-gray-100"
-          >
-            Register Now<span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
       </nav>
+
+      {/* Mobile Menu Dialog */}
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
         className="lg:hidden"
       >
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 z-40 bg-black/50" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm">
           <div className="flex items-center justify-between">
-            <span className="sr-only">Your Company</span>
-            <Link
-              activeClass="active"
-              to="page0"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-              onClick={() => {
-                setMobileMenuOpen(false);
-              }}
-            >
-              <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-              <Image alt='logo' src='/logo2.png' width={80} height={60}></Image>
-            
-              </button>
-            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -166,115 +86,23 @@ export const Navbar = () => {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-700">
+            <div className="-my-6 divide-y divide-gray-500/20">
               <div className="space-y-2 py-6">
-                <Link
-                  activeClass="active"
-                  to="page1"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    About
-                  </button>
-                </Link>
-                <Link
-                  activeClass="active"
-                  to="page2"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    Tracks
-                  </button>
-                </Link>
-                {/* <Link
-                  activeClass="active"
-                  to="page3"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    Events
-                  </button>
-                </Link> */}
-                <Link
-                  activeClass="active"
-                  to="page4"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    Schedule
-                  </button>
-                </Link>
-                <Link
-                  activeClass="active"
-                  to="page8"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    Gallery
-                  </button>
-                </Link>
-                <Link
-                  activeClass="active"
-                  to="page6"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    FAQs
-                  </button>
-                </Link>
-                <Link
-                  activeClass="active"
-                  to="page5"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <button className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700">
-                    Contact
-                  </button>
-                </Link>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-200 hover:bg-gray-800 cursor-pointer"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
-              
             </div>
           </div>
         </DialogPanel>
