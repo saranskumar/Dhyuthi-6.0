@@ -8,7 +8,7 @@ declare global {
       NET: (options: VantaOptions) => VantaEffect;
       WAVES: (options: VantaOptions) => VantaEffect;
     };
-    THREE?: unknow;
+    THREE?: unknown;
   }
 }
 
