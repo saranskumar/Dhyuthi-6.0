@@ -16,9 +16,10 @@ const Tracks = () => {
 
         <div className="max-w-[1380px] mx-auto grid lg:grid-cols-2 gap-8">
           <div className="w-full shadow-xl flex flex-col p-4 my-16 rounded-lg hover:scale-105 duration-300">
-            <div className="mx-auto mt-[-3rem] bg-white">
-              <Image src={aurora} alt="" width="350" height="80" />
-            </div>
+           <div className="mx-auto mt-[-3rem] bg-white rounded-xl shadow-lg p-2">
+            <Image src={aurora} alt="Aurora" width="350" height="80" className="rounded-lg" />
+          </div>
+
 
             {/*  <h2 className='my-16 text-3xl font-bold text-center'>AURORA</h2>
             <p className='mt-[-3rem] text-center text-2xl font-serif'>$149</p>
