@@ -19,7 +19,7 @@ const links = [
       setCurrent((prev) => (prev + 1) % posters.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [posters.length]);
+  }, []);
 
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + posters.length) % posters.length);
