@@ -25,7 +25,7 @@ body {
         rgba(249, 234, 234, 0.1) 0 /* Lighter grid pattern for dark theme */
       )
       0 0/70px 70px,
-    #000000; /* Dark background color */
+    #0B0B0B; /* Dark background color */
   font-family: Arial, Helvetica, sans-serif;
 }
 
