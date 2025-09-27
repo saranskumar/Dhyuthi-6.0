@@ -39,7 +39,7 @@ export const Navbar = () => {
         backgroundColor: `rgba(30,30,30,${glassOpacity})`,
       }}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between h-16 sm:h-20 px-6 lg:px-8">
+      <nav className="flex items-center justify-between h-16 sm:h-20 px-6 lg:px-8 w-full">
         {/* Logo container */}
         <div
           className={`flex-shrink-0 transition-all duration-500 ease-in-out lg:block hidden`}
@@ -87,7 +87,7 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex space-x-2 xl:space-x-4">
+        <div className="hidden lg:flex flex-1 justify-end space-x-2 xl:space-x-4">
           {navLinks.map((link) => (
             <Link
               key={link.to}

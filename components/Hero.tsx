@@ -6,37 +6,21 @@ const Hero = () => {
     <section id="page0" className="bg-transparent pt-24">
     <div className="flex flex-col items-center justify-center px-4 space-y-4 text-center">
   {/* Event Logo */}
-  <div className="w-[90%] max-w-xl  -mt-6">
+  <div className="w-[100%] max-w-xl  -mt-6">
   <Image
     alt="Event Title"
-    src="/glow.png"
+    src="/LOGOWEB.png"
     width={800}
     height={200}
     className="w-full h-auto mx-auto"
   />
 </div>
 
-{/* Event Title (as image) */}
-<div className="w-[90%] max-w-xl  -mt-4">
-  <Image
-    alt="Event Title"
-    src="/dhyuthiplane.png"
-    width={800}
-    height={200}
-    className="w-full h-auto mx-auto"
-  />
-</div>
-
-
-
-
-  {/* Call-to-Action Button */}
- 
 
   {/* Location & Date */}
-  <div className="flex flex-col items-center justify-center gap-4 mb-2 sm:gap-6">
-  {/* Date first */}
-  <div className="w-32 sm:w-40 md:w-48 lg:w-56">
+<div className="flex flex-col items-center justify-center gap-6 mb-4 sm:gap-8">
+  {/* Date first (slightly bigger) */}
+  <div className="w-44 sm:w-52 md:w-56 lg:w-60 xl:w-64">
     <Image
       alt="Date"
       src="/date.png"
@@ -46,8 +30,8 @@ const Hero = () => {
     />
   </div>
 
-  {/* Location second */}
-  <div className="w-32 sm:w-40 md:w-48 lg:w-56">
+  {/* Location second (much bigger) */}
+  <div className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96">
     <Image
       alt="Location"
       src="/location.png"
@@ -57,6 +41,7 @@ const Hero = () => {
     />
   </div>
 </div>
+
 
 
   {/* Registration Info */}
