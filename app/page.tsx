@@ -13,8 +13,8 @@ export default function Home() {
     <div>
       
       <Hero />
+      <Timer/>
       <About />
-      <Timer />
       <PreEvents/>
       <Tracks />
       <Event />
