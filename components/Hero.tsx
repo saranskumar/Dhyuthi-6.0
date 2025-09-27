@@ -20,7 +20,7 @@ const Hero = () => {
   {/* Location & Date */}
 <div className="flex flex-col items-center justify-center gap-6 mb-4 sm:gap-8">
   {/* Date first (slightly bigger) */}
-  <div className="w-44 sm:w-52 md:w-56 lg:w-60 xl:w-64">
+  <div className="w-[85%]">
     <Image
       alt="Date"
       src="/date.png"
