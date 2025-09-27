@@ -81,15 +81,13 @@ const links = [
           {/* Text Content */}
           <div className="flex flex-col justify-center w-full lg:w-1/2" data-aos="fade-left">
             <h3 className="text-lg lg:text-xl font-semibold text-purple-400 mb-3 lg:mb-4">
-              Engaging Workshops & Talks
+               Build-Up to The Main Event 
             </h3>
             <h2 className="mb-4 text-2xl font-bold text-white lg:text-4xl lg:mb-6">
-              Build-Up to The Main Event
+             Dhyuthi 6.0 Pre-Events
             </h2>
             <p className="text-base leading-relaxed text-gray-300">
-              Leading up to DHYUTHI 6.0, we host a series of pre-events designed to ignite curiosity
-              and build momentum. These include hands-on workshops, insightful tech talks by
-              industry experts, and interactive sessions.
+              Dhyuthi 6.0 Pre-Events are a series of exciting competitions and challenges designed to ignite creativity, innovation, and collaboration among students. From gaming battles to design contests and intellectual quests, these pre-events set the stage for the grand festival, giving participants a chance to showcase their skills, win exclusive goodies, and become a part of the Dhyuthi legacy.
             </p>
           </div>
         </div>
