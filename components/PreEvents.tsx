@@ -15,11 +15,11 @@ const links = [
 
   // Auto-scroll every 3 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % posters.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const interval = setInterval(() => {
+    setCurrent((prev) => (prev + 1) % posters.length);
+  }, 3000);
+  return () => clearInterval(interval);
+}, [posters.length]); // ✅ fixes ESLint warning
 
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + posters.length) % posters.length);

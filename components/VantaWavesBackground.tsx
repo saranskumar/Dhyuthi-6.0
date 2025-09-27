@@ -8,7 +8,7 @@ declare global {
       NET: (options: VantaOptions) => VantaEffect;
       WAVES: (options: VantaOptions) => VantaEffect;
     };
-    THREE?: any;
+    THREE?: unkown;
   }
 }
 
@@ -72,7 +72,7 @@ const VantaNetBackground = () => {
             scale: 1,
             scaleMobile: 1,
             color: 0x6103c0,
-            backgroundColor: 0x1b1a22,
+            backgroundColor: 0x1a1a1a,
             points: 9,
             maxDistance: 10,
             spacing: 17,
