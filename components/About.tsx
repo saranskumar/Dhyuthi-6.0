@@ -8,9 +8,11 @@ const About = () => {
     <section className="padding pt-20">
       <section
         id="page1"
-        className="flex justify-between items-center max-lg:flex-col gap-10 w-full max-container text-white"
+        className="backdrop-blur-lg bg-[#9348fc]/10 text-white 
+             rounded-3xl flex justify-between items-center 
+             max-lg:flex-col gap-10 w-full max-container-white"
       >
-        <div className="flex-1 flex justify-center items-center ">
+        <div className=" flex-1 flex justify-center items-center ">
           <Image
             src={logo}
             alt=""
