@@ -46,7 +46,7 @@ export default function Track1Registration() {
               Registration Successful!
             </h2>
             <p className="mb-4">
-              Thank you for registering for TRACK1. We'll verify your payment
+              Thank you for registering for TRACK1. We will verify your payment
               and send confirmation via email.
             </p>
           </div>
