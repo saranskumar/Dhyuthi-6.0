@@ -43,7 +43,7 @@ const Faqs = () => {
     {
       title: "What can I expect from Dhyuthi 6.0?",
       content:
-        "Dhyuthi promises to be an invaluable opportunity for learning, networking, and innovation through hands-on experience in three distinct tracks, along with cultural events fostering creativity, thereby ensuring a well-rounded experience for participants.",
+        "Dhyuthi promises to be an invaluable opportunity for learning, networking, and innovation through hands-on experience in four distinct tracks, along with cultural events fostering creativity, thereby ensuring a well-rounded experience for participants.",
     },
     {
       title: "Will I get certificates for participation?",
