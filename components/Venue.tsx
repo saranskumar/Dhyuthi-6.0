@@ -11,7 +11,7 @@ const Venue = () => {
             width="600"
             height="450"
             // Source Stackoverflow
-            style={{ border: 0, filter: "invert(100%)" }}
+            style={{ border: 0, filter: 'invert(90%) hue-rotate(250deg) saturate(150%) brightness(80%)' }}
             // allowfullscreen={false}
             loading="lazy"
             className="w-full rounded-md mb-5"
