@@ -71,11 +71,11 @@ const VantaNetBackground = () => {
             minWidth: 200,
             scale: 1,
             scaleMobile: 1,
-            color: 0xb86ee5,
+            color: 0x77519f,
             backgroundColor: 0x151518,
             points: 18,
             maxDistance: 10,
-            spacing: 17,
+            spacing: 18,
           });
         }
       } catch (err) {

@@ -25,7 +25,7 @@ export const Fotter = () => {
                 href="https://ieeesctsb.org/"
                 className="text-white hover:text-gray-300"
               >
-                IEEE SCTSB
+                IEEE SCT SB
               </a>
               <a
                 href="https://www.instagram.com/ieeesctsb/"
@@ -46,7 +46,7 @@ export const Fotter = () => {
                 <FaEnvelope size={24} />
               </a>
               <a
-                href="https://github.com/amithbiju/dhyuthi_5.0"
+                href="#"
                 className="text-white hover:text-gray-300"
               >
                 <FaGithub size={24} />

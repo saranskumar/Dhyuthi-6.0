@@ -43,7 +43,7 @@ const Faqs = () => {
     },
     {
       title: "Are meals included for participants during the event?",
-      content: "Yes, lunch and dinner will be provided for all participants.",
+      content: "Yes, lunch, dinner and refreshments will be provided for all participants.",
     },
     {
       title: "Is accommodation available for participants?",

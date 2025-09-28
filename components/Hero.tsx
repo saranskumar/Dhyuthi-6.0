@@ -21,13 +21,13 @@ const Hero = () => {
 <div className="flex flex-col items-center justify-center gap-6 mb-4 sm:gap-8">
   {/* Date first (slightly bigger) */}
   <div className="w-[80%]">
-    <Image
+   <a href="upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=100&cu=INR&tn=Payment"> <Image
       alt="Date"
       src="/date.png"
       width={800}   // original image width
       height={200}  // original image height
       className="w-full h-auto"
-    />
+    /></a>
   </div>
 
   {/* Location second (much bigger) */}

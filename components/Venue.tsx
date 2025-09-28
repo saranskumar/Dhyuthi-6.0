@@ -35,10 +35,10 @@ const Venue = () => {
                 Email
               </h2>
               <a
-                href="mailto:ieeectsctsb@gmail.com"
+                href="mailto:ieeesctsb@gmail.com"
                 className="text-white hover:underline"
               >
-                ieeectsctsb@gmail.com
+                ieeesctsb@gmail.com
               </a>
             </div>
             <div>
