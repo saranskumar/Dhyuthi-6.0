@@ -1,4 +1,6 @@
 import React from "react";
+import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+
 
 const Venue = () => {
   return (
@@ -21,7 +23,7 @@ const Venue = () => {
           <div className="backdrop-blur-sm text-white p-6 rounded-lg">
             <div className="mb-6">
               <h2 className="flex items-center text-lg font-bold">
-                <span className="text-orange-500 mr-2">📍</span>
+                 <MapPinIcon className="w-6 h-6 text-purple-400 mr-2" />
                 Address
               </h2>
               <p>
@@ -31,7 +33,7 @@ const Venue = () => {
             </div>
             <div className="mb-6">
               <h2 className="flex items-center text-lg font-bold">
-                <span>✉️</span>
+                <EnvelopeIcon className="w-6 h-6 text-purple-400 mr-2" />
                 Email
               </h2>
               <a
@@ -43,7 +45,7 @@ const Venue = () => {
             </div>
             <div>
               <h2 className="flex items-center text-lg font-bold">
-                <span className="text-red-500 mr-2">📞</span>
+                 <PhoneIcon className="w-6 h-6 text-purple-400 mr-2" />
                 Call
               </h2>
               <p className="pt-2">Alfy Joseph Kunjumon</p>
