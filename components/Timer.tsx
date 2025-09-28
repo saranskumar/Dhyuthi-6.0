@@ -52,7 +52,7 @@ export const Timer = () => {
 
   return (
       
-    <div className="h-screen flex flex-col items-center justify-center  text-white font-mono p-4">
+    <div className="h-screen flex flex-col items-center justify-center   text-white font-mono p-4">
       <p className="text-base sm:text-lg mb-4 italic text-center">
         THE MUCH AWAITED EVENT WILL START IN
       </p>

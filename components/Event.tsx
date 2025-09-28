@@ -5,7 +5,7 @@ import Day2 from "./util/Day2";
 import Day3 from "./util/Day3";
 
 const Event = () => {
-  const [activeTab, setActiveTab] = useState("day2"); // Default to "profile"
+  const [activeTab, setActiveTab] = useState("day1"); // Default to "profile"
 
   // Function to handle tab change
   const handleTabChange = (tab: string) => {

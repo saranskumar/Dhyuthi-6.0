@@ -6,21 +6,30 @@ interface AccordionItemProps {
   title: string;
   content: string;
 }
+
 const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // expand either on click or hover
+  const expand = isOpen || isHovered;
 
   return (
-    <div className="backdrop-blur-sm text-white rounded-lg shadow-md my-4">
+    <div
+      className="backdrop-blur-lg bg-[#9348fc]/10 text-white rounded-lg shadow-md my-4 p-4"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div
         className="cursor-pointer flex justify-between items-center p-4 font-bold"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{title}</span>
-        <span>{isOpen ? "-" : "+"}</span>
+        <span>{expand ? "-" : "+"}</span>
       </div>
       <div
-        className={`transition-max-height duration-500 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-screen" : "max-h-0"
+        className={`transition-[max-height] duration-700 ease-[cubic-bezier(.4,0,.2,1)] overflow-hidden ${
+          expand ? "max-h-screen" : "max-h-0"
         }`}
       >
         <div className="p-4 border-t border-gray-500">{content}</div>
@@ -43,7 +52,8 @@ const Faqs = () => {
     },
     {
       title: "Are meals included for participants during the event?",
-      content: "Yes, lunch, dinner and refreshments will be provided for all participants.",
+      content:
+        "Yes, lunch, dinner and refreshments will be provided for all participants.",
     },
     {
       title: "Is accommodation available for participants?",
@@ -53,10 +63,9 @@ const Faqs = () => {
   ];
 
   return (
-    <div id="page6" className="w-full flex justify-center items-center ">
+    <div id="page6" className="w-full flex justify-center items-center">
       <div className="md:w-[80%] m-3 mt-16 justify-center items-center">
-        <h2 className=" font-palanquin text-4xl mb-10 font-bold ">FAQs</h2>
-
+        <h2 className="font-palanquin text-4xl mb-10 font-bold">FAQs</h2>
         {items.map((item, index) => (
           <AccordionItem
             key={index}
