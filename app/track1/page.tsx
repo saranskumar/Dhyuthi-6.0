@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import { Calendar, MapPin, Clock, Users, ArrowRight, Star } from 'lucide-react'
-
+import Image from 'next/image';
 
 export default function Track1Page() {
   const speakers = [
@@ -188,7 +188,15 @@ export default function Track1Page() {
       key={index}
       className="bg-black/40 backdrop-blur-md rounded-xl shadow-lg hover:shadow-purple-500/30 transition-shadow duration-300 overflow-hidden border border-purple-500/10"
     >
-      <img src={speaker.image} alt={speaker.name} className="w-full h-64 object-cover"/>
+     <div className="relative w-full h-64">
+  <Image
+    src={speaker.image}
+    alt={speaker.name}
+    fill
+    className="object-cover rounded-t-xl"
+  />
+</div>
+
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-1">{speaker.name}</h3>
         <p className="text-purple-400 font-medium mb-2">{speaker.title}</p>
