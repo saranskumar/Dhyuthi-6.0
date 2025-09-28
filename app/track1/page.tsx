@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+
 
 export default function TrackPage() {
-  const router = useRouter();
+  
   const [showRegistration, setShowRegistration] = useState(false);
   
   // Carousel posters for pre-events
