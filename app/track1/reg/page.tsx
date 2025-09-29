@@ -61,6 +61,13 @@ export default function Track1Registration() {
       alert("Please accept the terms and conditions to proceed.");
       return;
     }
+   const requiredFields = ["name", "phone", "email", "college", "year", "department"];
+  for (const field of requiredFields) {
+    if (!formData[field as keyof FormData]) {
+      alert("Please fill all required fields before proceeding.");
+      return;
+    }
+  }
     setStep(2);
   };
 
