@@ -2,7 +2,7 @@
 import React from 'react'
 import { Calendar, MapPin, Clock, Users, ArrowRight, Star } from 'lucide-react'
 import Image from 'next/image';
-
+ 
 export default function Track1Page() {
   const speakers = [
     {
@@ -10,7 +10,7 @@ export default function Track1Page() {
       title: 'AI Research Director',
       company: 'TechCorp',
       image:
-        'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face',
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
       topic: 'Future of Artificial Intelligence'
     },
     {
@@ -42,10 +42,16 @@ export default function Track1Page() {
             <div className='relative'>
               <div className='bg-black/40 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-purple-500/20'>
                 <div className='text-center'>
-                  <div className='bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6 rounded-xl mb-6'>
-                    <h1 className='text-4xl font-bold mb-2'>TRACK1</h1>
-                    <p className='text-xl opacity-90'>Tech Innovation Summit 2025</p>
-                  </div>
+                  <div className="relative aspect-[3/4] rounded-xl overflow-hidden mb-6">
+                      <Image
+                        src="/lock.jpg"          // replace with your poster
+                        alt="TRACK1 Poster"
+                        fill
+                        className="object-cover object-center"
+                        priority={false}
+                      />
+                    </div>
+
 
                   <div className='space-y-4 text-purple-200'>
                     <div className='flex items-center justify-center gap-2'>
