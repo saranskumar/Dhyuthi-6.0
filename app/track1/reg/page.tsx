@@ -8,6 +8,7 @@ interface FormData {
   name: string;
   phone: string;
   email: string;
+  ieeeId?: string;
   college: string;
   year: string;
   department: string;
@@ -24,10 +25,11 @@ export default function Track1Registration() {
     name: "",
     phone: "",
     email: "",
+    ieeeId: "",
     college: "",
     year: "",
     department: "",
-    foodPreference: "veg",
+    foodPreference: "non-veg",
     stayNeeded: "no",
     registrationType: "non-ieee",
     termsAccepted: false,
@@ -97,6 +99,7 @@ export default function Track1Registration() {
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
+          ieeeId: formData.ieeeId,
           college: formData.college,
           year: formData.year,
           department: formData.department,
@@ -207,6 +210,15 @@ export default function Track1Registration() {
                         className="px-4 py-3 rounded-xl text-black w-full focus:ring-2 focus:ring-purple-500 outline-none"
                       />
                     </div>
+                      <input
+                        name="ieeeId"
+                        placeholder="IEEE Membership ID"
+                        value={formData.ieeeId}
+                        onChange={handleInputChange}
+                        className="px-4 py-3 rounded-xl text-black w-full focus:ring-2 focus:ring-purple-500 outline-none"
+                        
+                      />
+                      <p className="text-sm text-purple-300 mt-1">Optional, only if you have an IEEE ID</p>
 
                     <input
                       name="college"
@@ -253,8 +265,8 @@ export default function Track1Registration() {
                           onChange={handleInputChange}
                           className="px-4 py-3 rounded-xl text-black w-full focus:ring-2 focus:ring-purple-500 outline-none"
                         >
+                           <option value="non-veg">Non-Vegetarian</option>
                           <option value="veg">Vegetarian</option>
-                          <option value="non-veg">Non-Vegetarian</option>
                         </select>
                       </div>
 
@@ -270,6 +282,8 @@ export default function Track1Registration() {
                           <option value="no">No</option>
                           <option value="yes">Yes</option>
                         </select>
+                        <p className="text-sm text-yellow-300 mt-1">⚠️ Extra charges apply for stay. You don’t need to pay now. We will contact you soon after registration.</p>
+
                       </div>
                     </div>
                   </div>
@@ -319,19 +333,20 @@ export default function Track1Registration() {
                       <p>• By registering, you consent to the use of photographs/videos taken during the event for promotional purposes.</p>
                       <p>• Payment confirmation will be sent via email within 24-48 hours after verification.</p>
                     </div>
-                    <label className="flex items-start cursor-pointer">
-                      <input
-                        type="checkbox"
-                        name="termsAccepted"
-                        checked={formData.termsAccepted}
-                        onChange={handleInputChange}
-                        className="mr-3 mt-1 w-5 h-5"
-                        required
-                      />
-                      <span className="text-sm">
-                        I have read and agree to the terms and conditions *
-                      </span>
-                    </label>
+                  <label className="flex items-center cursor-pointer mt-4 p-3 rounded-xl bg-purple-900/20 hover:bg-purple-900/30 transition-colors">
+  <input
+    type="checkbox"
+    name="termsAccepted"
+    checked={formData.termsAccepted}
+    onChange={handleInputChange}
+    className="w-6 h-6 text-purple-600 rounded-lg accent-purple-500 outline-none border-none"
+  />
+  <span className="ml-3 text-sm text-purple-200">
+    I have read and agree to the terms and conditions *
+  </span>
+</label>
+
+
                   </div>
                 </>
               )}
@@ -442,15 +457,20 @@ export default function Track1Registration() {
                     ← Back
                   </button>
                 )}
-                <button
-                  type="button"
-                  onClick={step === 1 ? handleNext : handleSubmit}
-                  disabled={isSubmitting}
-                  className="ml-auto inline-flex items-center bg-gradient-to-r from-purple-600 to-purple-800 px-8 py-3 rounded-2xl font-bold hover:from-purple-700 hover:to-purple-900 transform hover:scale-105 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? "Submitting..." : step === 1 ? "Next: Payment" : "Submit Registration"}
-                  {!isSubmitting && <ArrowRight className="ml-2 w-5 h-5" />}
-                </button>
+               <button
+                    type="button"
+                    onClick={step === 1 ? handleNext : handleSubmit}
+                    disabled={step === 1 && !formData.termsAccepted || isSubmitting}
+                    className={`ml-auto inline-flex items-center px-8 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg
+                      ${step === 1 && !formData.termsAccepted 
+                        ? "bg-gray-500 cursor-not-allowed opacity-50 transform-none" 
+                        : "bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 transform hover:scale-105"
+                      }`}
+                   >
+                    {isSubmitting ? "Submitting..." : step === 1 ? "Next: Payment" : "Submit Registration"}
+                    {!isSubmitting && <ArrowRight className="ml-2 w-5 h-5" />}
+                  </button>
+
               </div>
             </div>
           )}
