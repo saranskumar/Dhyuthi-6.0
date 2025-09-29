@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
-import Image from "next/image";
 
 type RegistrationType = "ieee+society" | "ieee-only" | "non-ieee";
 
@@ -382,7 +381,8 @@ export default function Track1Registration() {
 
                     {showQR && (
                       <div className="mt-6 p-6 bg-white rounded-2xl inline-block">
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                           src={getQRCodeUrl()}
                           alt="Payment QR Code"
                           width={300}
