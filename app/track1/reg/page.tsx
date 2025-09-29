@@ -8,7 +8,7 @@ interface FormData {
   name: string;
   phone: string;
   email: string;
-  ieeeId?: string;
+  ieeeId: string;
   college: string;
   year: string;
   department: string;
@@ -47,29 +47,50 @@ export default function Track1Registration() {
     "non-ieee": 499,
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const target = e.target as HTMLInputElement;
-    const { name, value, type, files, checked } = target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "file" ? (files ? files[0] : null) : type === "checkbox" ? checked : value,
-    }));
-  };
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const { name, value, type, files, checked } = e.target as HTMLInputElement;
+
+  setFormData(prev => ({
+    ...prev,
+    [name]:
+      type === "file"
+        ? (files ? files[0] : null)
+        : type === "checkbox"
+        ? checked
+        : value,
+  }));
+};
+
+const hasIEEEId = formData.ieeeId.trim() !== "";
+
 
   const handleNext = () => {
-    if (step === 1 && !formData.termsAccepted) {
-      alert("Please accept the terms and conditions to proceed.");
-      return;
-    }
-   const requiredFields = ["name", "phone", "email", "college", "year", "department"];
+  if (step === 1 && !formData.termsAccepted) {
+    alert("Please accept the terms and conditions to proceed.");
+    return;
+  }
+
+  const requiredFields = ["name", "phone", "email", "college", "year", "department"];
   for (const field of requiredFields) {
     if (!formData[field as keyof FormData]) {
       alert("Please fill all required fields before proceeding.");
       return;
     }
   }
-    setStep(2);
-  };
+
+  // IEEE ID validation
+  if (
+    (formData.registrationType === "ieee-only" || formData.registrationType === "ieee+society") &&
+    !formData.ieeeId.trim()
+  ) {
+    alert("Please enter your IEEE Membership ID for this registration type.");
+    return;
+  }
+
+  setStep(2);
+};
+
+
 
   const handleBack = () => setStep(1);
 
@@ -151,6 +172,7 @@ export default function Track1Registration() {
 
     return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiString)}`;
   };
+
 
   return (
     <div className="min-h-screen bg-transparent">
@@ -297,36 +319,51 @@ export default function Track1Registration() {
 
                   {/* Registration Type */}
                   <div className="mt-8">
-                    <label className="block mb-4 text-purple-200 font-medium text-lg">Registration Type *</label>
                     <div className="space-y-3">
-                      {(Object.entries(pricing) as [RegistrationType, number][]).map(([type, price]) => (
-                        <label
-                          key={type}
-                          className={`flex items-center justify-between p-4 rounded-xl cursor-pointer border-2 transition-all ${
-                            formData.registrationType === type
-                              ? 'border-purple-500 bg-purple-500/20'
-                              : 'border-purple-500/30 bg-black/20 hover:border-purple-500/50'
-                          }`}
-                        >
-                          <div className="flex items-center">
-                            <input
-                              type="radio"
-                              name="registrationType"
-                              value={type}
-                              checked={formData.registrationType === type}
-                              onChange={handleInputChange}
-                              className="mr-3 w-4 h-4"
-                            />
-                            <span className="font-medium capitalize">
-                              {type === "ieee+society" ? "IEEE Member + Society Member" : 
-                               type === "ieee-only" ? "IEEE Member Only" : 
-                               "Non-IEEE Member"}
-                            </span>
-                          </div>
-                          <span className="text-xl font-bold text-purple-300">₹{price}</span>
-                        </label>
-                      ))}
-                    </div>
+  {(Object.entries(pricing) as [RegistrationType, number][]).map(([type, price]) => {
+    const isIEEEOption = type === "ieee-only" || type === "ieee+society";
+    const disabled = isIEEEOption && !hasIEEEId;
+
+    return (
+      <label
+        key={type}
+        className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all ${
+          disabled
+            ? "opacity-50 cursor-not-allowed border-gray-500/30"
+            : formData.registrationType === type
+              ? "border-purple-500 bg-purple-500/20"
+              : "border-purple-500/30 bg-black/20 hover:border-purple-500/50"
+        }`}
+      >
+        <div className="flex items-center">
+          <input
+            type="radio"
+            name="registrationType"
+            value={type}
+            checked={formData.registrationType === type}
+            onChange={handleInputChange}
+            className="mr-3 w-4 h-4"
+            disabled={disabled}
+          />
+          <span className="font-medium capitalize">
+            {type === "ieee+society"
+              ? "IEEE Member + Society Member"
+              : type === "ieee-only"
+              ? "IEEE Member Only"
+              : "Non-IEEE Member"}
+          </span>
+        </div>
+        <span className="text-xl font-bold text-purple-300">₹{price}</span>
+      </label>
+    );
+  })}
+  {!hasIEEEId && (
+    <p className="text-sm text-yellow-300 mt-2">
+      Enter your IEEE Membership ID above to enable IEEE options.
+    </p>
+  )}
+</div>
+
                   </div>
 
                   {/* Terms & Conditions */}
