@@ -1,10 +1,27 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
+import Image from "next/image";
+
+type RegistrationType = "ieee+society" | "ieee-only" | "non-ieee";
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  college: string;
+  year: string;
+  department: string;
+  foodPreference: "veg" | "non-veg";
+  stayNeeded: "yes" | "no";
+  registrationType: RegistrationType;
+  termsAccepted: boolean;
+  paymentScreenshot: File | null;
+}
 
 export default function Track1Registration() {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
     email: "",
@@ -23,17 +40,18 @@ export default function Track1Registration() {
 
   const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
 
-  const pricing = {
+  const pricing: Record<RegistrationType, number> = {
     "ieee+society": 299,
     "ieee-only": 399,
     "non-ieee": 499,
   };
 
-  const handleInputChange = (e) => {
-    const { name, value, type, files, checked } = e.target;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const target = e.target as HTMLInputElement;
+    const { name, value, type, files, checked } = target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "file" ? files[0] : type === "checkbox" ? checked : value,
+      [name]: type === "file" ? (files ? files[0] : null) : type === "checkbox" ? checked : value,
     }));
   };
 
@@ -49,7 +67,7 @@ export default function Track1Registration() {
 
   const handlePayNow = () => {
     const amount = pricing[formData.registrationType];
-    const upiLink = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=TRACK1 Registration Payment`;
+    const upiLink = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=TRACK1%20Registration%20Payment`;
     window.location.href = upiLink;
   };
 
@@ -66,6 +84,12 @@ export default function Track1Registration() {
       reader.readAsDataURL(formData.paymentScreenshot);
       
       reader.onload = async () => {
+        if (!reader.result || typeof reader.result !== 'string') {
+          alert("Error reading file. Please try again.");
+          setIsSubmitting(false);
+          return;
+        }
+
         const base64Image = reader.result.split(',')[1];
         
         const payload = {
@@ -80,11 +104,11 @@ export default function Track1Registration() {
           registrationType: formData.registrationType,
           amount: pricing[formData.registrationType],
           paymentScreenshot: base64Image,
-          fileName: formData.paymentScreenshot.name,
+          fileName: formData.paymentScreenshot?.name || 'payment.png',
           timestamp: new Date().toISOString(),
         };
 
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
+        await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
@@ -109,6 +133,12 @@ export default function Track1Registration() {
     }
   };
 
+  const getQRCodeUrl = () => {
+    const amount = pricing[formData.registrationType];
+    const upiString = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=TRACK1%20Registration%20Payment`;
+    return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiString)}`;
+  };
+
   return (
     <div className="min-h-screen bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -119,7 +149,7 @@ export default function Track1Registration() {
               <h2 className="text-3xl font-bold mb-4">Registration Successful!</h2>
               <p className="text-lg mb-2">Thank you for registering for TRACK1.</p>
               <p className="text-purple-200">
-                We'll verify your payment and send confirmation via email within 24 hours.
+                We&apos;ll verify your payment and send confirmation via email within 24 hours.
               </p>
             </div>
           ) : (
@@ -245,7 +275,7 @@ export default function Track1Registration() {
                   <div className="mt-8">
                     <label className="block mb-4 text-purple-200 font-medium text-lg">Registration Type *</label>
                     <div className="space-y-3">
-                      {Object.entries(pricing).map(([type, price]) => (
+                      {(Object.entries(pricing) as [RegistrationType, number][]).map(([type, price]) => (
                         <label
                           key={type}
                           className={`flex items-center justify-between p-4 rounded-xl cursor-pointer border-2 transition-all ${
@@ -331,7 +361,7 @@ export default function Track1Registration() {
                       className="w-full mb-4 inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700 px-8 py-4 rounded-2xl font-bold hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-300 shadow-lg"
                     >
                       <Smartphone className="mr-2 w-6 h-6" />
-                      Pay with UPI (Mobile)
+                      Pay ₹{pricing[formData.registrationType]} with UPI (Mobile)
                     </button>
 
                     <div className="flex items-center my-6">
@@ -352,13 +382,18 @@ export default function Track1Registration() {
 
                     {showQR && (
                       <div className="mt-6 p-6 bg-white rounded-2xl inline-block">
-                        <img
-                          src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${pricing[formData.registrationType]}&cu=INR&tn=TRACK1%20Registration%20Payment`}
+                        <Image
+                          src={getQRCodeUrl()}
                           alt="Payment QR Code"
+                          width={300}
+                          height={300}
                           className="w-64 h-64 mx-auto"
                         />
                         <p className="text-black text-sm mt-4 font-medium">
-                          Scan with any UPI app
+                          Scan with any UPI app to pay ₹{pricing[formData.registrationType]}
+                        </p>
+                        <p className="text-gray-600 text-xs mt-2">
+                          saranskumarwh@oksbi
                         </p>
                       </div>
                     )}
