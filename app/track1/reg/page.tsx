@@ -66,7 +66,9 @@ export default function Track1Registration() {
 
   const handlePayNow = () => {
     const amount = pricing[formData.registrationType];
-    const upiLink = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=TRACK1%20Registration%20Payment`;
+    const note = `TRACK1 Registration - ${formData.name}`;
+    const upiLink = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+
     window.location.href = upiLink;
   };
 
@@ -134,7 +136,9 @@ export default function Track1Registration() {
 
   const getQRCodeUrl = () => {
     const amount = pricing[formData.registrationType];
-    const upiString = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=TRACK1%20Registration%20Payment`;
+    const note = `TRACK1 Registration by:- ${formData.name}`;
+    const upiString = `upi://pay?pa=saranskumarwh@oksbi&pn=Saran&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+
     return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiString)}`;
   };
 
