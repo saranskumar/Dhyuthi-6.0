@@ -64,21 +64,21 @@ export const Timer = () => {
             Days
           </span>
         </div>
-        <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">-</span>
+        <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">:</span>
         <div className="flex flex-col items-center">
           <span>{timeLeft.hours || "0"}</span>
           <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
             Hours
           </span>
         </div>
-        <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">-</span>
+        <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">:</span>
         <div className="flex flex-col items-center">
           <span>{timeLeft.minutes || "0"}</span>
           <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
             Minutes
           </span>
         </div>
-        <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">-</span>
+        <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl">:</span>
         <div className="flex flex-col items-center">
           <span>{timeLeft.seconds || "0"}</span>
           <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
