@@ -8,7 +8,7 @@ const About = () => {
     <section className="padding pt-20">
       <section
         id="page1"
-        className="backdrop-blur-lg bg-[#9348fc]/10 text-white 
+        className=" text-white 
              rounded-3xl flex justify-between items-center 
              max-lg:flex-col gap-10 w-full max-container-white"
       >
@@ -24,11 +24,11 @@ const About = () => {
             className=" object-contain rounded-md"
           />
         </div>
-        <div className="flex m-5 flex-1 flex-col">
+        <div className="flex m-5 flex-1 flex-col ">
           <h2 className="font-palanquin text-4xl mb-10 font-bold lg:max-w-lg lg:text-start ">
             About Dhyuthi 2025
           </h2>
-          <p className="mt-4 lg:max-w-lg font-montserrat text-slate-gray text-lg leading-7 text-justify text-[#bbbcbc]">
+          <p className="mt-4 lg:max-w-lg font-montserrat text-slate-gray text-lg leading-7 text-justify text-[#be8dff]">
             {about_event}
           </p>
         
