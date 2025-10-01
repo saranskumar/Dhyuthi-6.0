@@ -57,7 +57,7 @@ const Gallery = () => {
             {images.map((image, index) => (
               <div
                 key={index}
-                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ${
+                className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
                   index === current ? "opacity-100 z-20" : "opacity-0 z-10"
                 }`}
               >
