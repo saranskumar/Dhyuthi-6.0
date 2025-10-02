@@ -66,7 +66,7 @@ const VantaNetBackground = () => {
             el: vantaRef.current,
             mouseControls: true,
             touchControls: true,
-            gyroControls: false,
+            gyroControls: true,
             minHeight: 200,
             minWidth: 200,
             scale: 1,

@@ -38,6 +38,7 @@ const Venue = () => {
               </h2>
               <a
                 href="mailto:ieeesctsb@gmail.com"
+                target="_blank"
                 className="text-white hover:underline"
               >
                 ieeesctsb@gmail.com
@@ -49,9 +50,9 @@ const Venue = () => {
                 Call
               </h2>
               <p className="pt-2">Alfy Joseph Kunjumon</p>
-              <a href="tel:+91 9567694707"> +91 9567694707</a>
+              <a href="tel:+91 9567694707" target="_blank"> +91 9567694707</a>
               <p className="pt-2">Sneha Bijee</p>
-              <a href="tel:+918590499957"> +91 8590499957</a>
+              <a href="tel:+918590499957" target="_blank"> +91 8590499957</a>
             </div>
           </div>
         </div>

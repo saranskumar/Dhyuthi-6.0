@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export const Fotter = () => {
   return (
@@ -23,30 +23,42 @@ export const Fotter = () => {
             <div className="mt-4 flex justify-left space-x-6">
               <a
                 href="https://ieeesctsb.org/"
+                target="_blank"
                 className="text-white hover:text-gray-300"
               >
                 IEEE SCT SB
               </a>
               <a
                 href="https://www.instagram.com/ieeesctsb/"
+                target="_blank"
                 className="text-white hover:text-gray-300"
               >
                 <FaInstagram size={24} />
               </a>
               <a
                 href="https://in.linkedin.com/company/ieeesctsb"
+                target="_blank"
                 className="text-white hover:text-gray-300"
               >
                 <FaLinkedin size={24} />
               </a>
               <a
                 href="mailto:ieeectsctsb@gmail.com"
+                target="_blank"
                 className="text-white hover:text-gray-300"
               >
                 <FaEnvelope size={24} />
               </a>
+                <a
+                href="https://whatsapp.com/channel/0029Vakj3LDKLaHsJxbxMG0K"
+                target="_blank"
+                className="text-white hover:text-gray-300"
+              >
+                <FaWhatsapp size={24} />
+              </a>
               <a
-                href="#"
+                href="https://github.com/saranskumar/"
+                target="_blank"
                 className="text-white hover:text-gray-300"
               >
                 <FaGithub size={24} />
@@ -79,7 +91,7 @@ export const Fotter = () => {
         <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2025{" "}
-          <a href="https://dhyuthi.ieeesctsb.org/" className="hover:underline">
+          <a href="#" className="hover:underline">
             Dhyuthi 6.0
           </a>
           . All Rights Reserved.
