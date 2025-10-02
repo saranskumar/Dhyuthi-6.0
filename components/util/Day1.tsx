@@ -6,7 +6,7 @@ const Day1 = () => {
       id: 1,
       time: "5.00 pm - 6.00 pm",
       event: "Inaugural Ceremony",
-      description: "Attendees will check in and register for the workshop.",
+      description: "",
     },
   ];
 
