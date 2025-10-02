@@ -57,7 +57,7 @@ export const Fotter = () => {
                 <FaWhatsapp size={24} />
               </a>
               <a
-                href="https://github.com/saranskumar/"
+                href="#"
                 target="_blank"
                 className="text-white hover:text-gray-300"
               >
