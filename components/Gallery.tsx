@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 
 import dhyuthi1 from "../Dhyuthi/gallery/dhyuthi1.jpg";
 import dhyuthi2 from "../Dhyuthi/gallery/dhyuthi2.jpg";
@@ -29,7 +30,7 @@ const Gallery = () => {
 
   const [current, setCurrent] = useState(0);
 
-  // Auto-scroll every 3 seconds
+  // Auto-scroll every 3s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -45,13 +46,25 @@ const Gallery = () => {
     setCurrent((prev) => (prev + 1) % images.length);
   };
 
+  // Swipe Handlers
+  const handlers = useSwipeable({
+  onSwipedLeft: nextSlide,
+  onSwipedRight: prevSlide,
+  preventScrollOnSwipe: true,
+  trackMouse: true,
+});
+
+
   return (
     <div id="page8" className="w-full flex justify-center items-center py-12">
-      <div className="w-full md:w-[90%] lg:w-[80%] px-3">
+      <div className="w-full md:w-[90%] lg:w-[65%] px-3">
         <h2 className="font-palanquin text-4xl mb-10 font-bold">Gallery</h2>
 
         {/* Carousel Container */}
-        <div className="relative w-full flex justify-center items-center">
+        <div
+          {...handlers}
+          className="relative w-full flex justify-center items-center select-none"
+        >
           {/* Image Container */}
           <div className="w-full relative overflow-hidden rounded-lg aspect-[16/9] min-h-[300px] sm:min-h-[400px] md:min-h-[500px]">
             {images.map((image, index) => (
