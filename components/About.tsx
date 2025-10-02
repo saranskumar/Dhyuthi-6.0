@@ -28,7 +28,7 @@ const About = () => {
           <h2 className="font-palanquin text-4xl mb-10 font-bold lg:max-w-lg lg:text-start ">
             About Dhyuthi 2025
           </h2>
-          <p className="mt-4 lg:max-w-lg font-montserrat text-slate-gray text-lg leading-7 text-justify text-[#be8dff]">
+          <p className="mt-4 lg:max-w-lg font-montserrat text-slate-gray text-lg leading-7 text-justify text-[#dcc4fc]">
             {about_event}
           </p>
         
