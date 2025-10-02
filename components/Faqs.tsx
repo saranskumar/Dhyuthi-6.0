@@ -65,7 +65,7 @@ const Faqs = () => {
   return (
     <div id="page6" className="w-full flex justify-center items-center">
       <div className="md:w-[80%] m-3 mt-16 justify-center items-center">
-        <h2 className="font-palanquin text-4xl mb-10 font-bold">FAQs</h2>
+        <h2 className="font-palanquin text-4xl mb-10 font-bold text-[#9348fc] ">FAQs</h2>
         {items.map((item, index) => (
           <AccordionItem
             key={index}

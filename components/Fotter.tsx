@@ -24,42 +24,42 @@ export const Fotter = () => {
               <a
                 href="https://ieeesctsb.org/"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-[#9348fc] transition-colors duration-300"
               >
                 IEEE SCT SB
               </a>
               <a
                 href="https://www.instagram.com/ieeesctsb/"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-[#9348fc] transition-colors duration-300"
               >
                 <FaInstagram size={24} />
               </a>
               <a
                 href="https://in.linkedin.com/company/ieeesctsb"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+               className="text-white hover:text-[#9348fc] transition-colors duration-300"
               >
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="mailto:ieeectsctsb@gmail.com"
+                href="mailto:mailtoieeesctsb@gmail.com"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-[#9348fc] transition-colors duration-300"
               >
                 <FaEnvelope size={24} />
               </a>
                 <a
                 href="https://whatsapp.com/channel/0029Vakj3LDKLaHsJxbxMG0K"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-[#9348fc] transition-colors duration-300"
               >
                 <FaWhatsapp size={24} />
               </a>
               <a
                 href="#"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-[#9348fc] transition-colors duration-300"
               >
                 <FaGithub size={24} />
               </a>

@@ -58,7 +58,7 @@ const Gallery = () => {
   return (
     <div id="page8" className="w-full flex justify-center items-center py-12">
       <div className="w-full md:w-[90%] lg:w-[65%] px-3">
-        <h2 className="font-palanquin text-4xl mb-10 font-bold">Gallery</h2>
+        <h2 className="font-palanquin text-4xl mb-10 font-bold text-[#9348fc] ">Gallery</h2>
 
         {/* Carousel Container */}
         <div
