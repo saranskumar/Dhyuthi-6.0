@@ -1,20 +1,21 @@
 "use client";
 import React from 'react'
-import { Calendar, MapPin, Clock, Users, ArrowRight, Star } from 'lucide-react'
+import { Calendar, MapPin, Clock, Users, ArrowRight, Star, Network } from 'lucide-react'
 import Image from 'next/image';
  
 export default function Track1Page() {
   const speakers = [
     {
-      name: 'Dr. Sarah Johnson',
+      name: 'Random girl',
       title: 'AI Research Director',
       company: 'TechCorp',
       image:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
+        
       topic: 'Future of Artificial Intelligence'
     },
     {
-      name: 'Mike Chen',
+      name: 'Random dude',
       title: 'Senior Developer',
       company: 'DevSolutions',
       image:
@@ -22,7 +23,7 @@ export default function Track1Page() {
       topic: 'Building Scalable Applications'
     },
     {
-      name: 'Lisa Rodriguez',
+      name: 'Speakeer',
       title: 'UX Design Lead',
       company: 'DesignHub',
       image:
@@ -56,7 +57,7 @@ export default function Track1Page() {
                   <div className='space-y-4 text-purple-200'>
                     <div className='flex items-center justify-center gap-2'>
                       <Calendar className='w-5 h-5 text-purple-400' />
-                      <span className='font-semibold'>March 15, 2025</span>
+                      <span className='font-semibold'>24-25-26 Oct 2025</span>
                     </div>
 
                     <div className='flex items-center justify-center gap-2'>
@@ -66,12 +67,12 @@ export default function Track1Page() {
 
                     <div className='flex items-center justify-center gap-2'>
                       <MapPin className='w-5 h-5 text-purple-400' />
-                      <span>Convention Center, Tech District</span>
+                      <span>SCTCE, Pappanamcode,Trivandrum</span>
                     </div>
 
                     <div className='flex items-center justify-center gap-2'>
                       <Users className='w-5 h-5 text-purple-400' />
-                      <span>500+ Attendees Expected</span>
+                      <span>200+ Attendees Expected</span>
                     </div>
                   </div>
 
@@ -93,10 +94,10 @@ export default function Track1Page() {
             {/* Event Description */}
             <div className='text-white'>
               <h2 className='text-5xl font-bold mb-6 leading-tight'>
-                The Future of
-                <span className='block bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent'>
-                  Technology
-                </span>
+                Name of the track
+                <h3 className='block bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent'>
+                  Tagline
+                </h3>
               </h2>
 
               <p className='text-xl mb-8 text-purple-200 leading-relaxed'>
@@ -107,13 +108,16 @@ export default function Track1Page() {
 
               <div className='flex flex-wrap gap-4 mb-8'>
                 <span className='bg-purple-500/30 text-purple-200 px-4 py-2 rounded-full text-sm font-medium'>
-                  AI & Machine Learning
+                  Agentic AI
                 </span>
                 <span className='bg-purple-500/30 text-purple-200 px-4 py-2 rounded-full text-sm font-medium'>
-                  Web Development
+                  Robo-football
                 </span>
                 <span className='bg-purple-500/30 text-purple-200 px-4 py-2 rounded-full text-sm font-medium'>
-                  UX Design
+                  Agar art
+                </span>
+                 <span className='bg-purple-500/30 text-purple-200 px-4 py-2 rounded-full text-sm font-medium'>
+                  Other skills
                 </span>
               </div>
 
@@ -167,7 +171,7 @@ export default function Track1Page() {
 
           <div className='bg-black/40 backdrop-blur-md p-8 rounded-xl shadow-lg hover:shadow-purple-500/30 transition-shadow duration-300 border border-purple-500/10'>
             <div className='w-16 h-16 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6'>
-              <MapPin className='w-8 h-8 text-purple-400' />
+              <Network className='w-8 h-8 text-purple-400' />
             </div>
             <h3 className='text-xl font-bold text-white mb-4'>Networking</h3>
             <p className='text-purple-200'>

@@ -311,7 +311,7 @@ const hasIEEEId = formData.ieeeId.trim() !== "";
                           <option value="no">No</option>
                           <option value="yes">Yes</option>
                         </select>
-                        <p className="text-sm text-yellow-300 mt-1">⚠️ Extra charges apply for stay. You don’t need to pay now. We will contact you soon after registration.</p>
+                        <p className="text-sm text-yellow-300 mt-1">⚠️ Accommodation charges are extra. Payment is not required now; we’ll contact you after registration.</p>
 
                       </div>
                     </div>
@@ -372,9 +372,7 @@ const hasIEEEId = formData.ieeeId.trim() !== "";
                     <div className="text-sm text-purple-100 space-y-2 max-h-40 overflow-y-auto mb-4">
                       <p>• Registration fees are non-refundable and non-transferable.</p>
                       <p>• Participants must carry a valid college ID during the event.</p>
-                      <p>• The organizers reserve the right to modify the schedule or cancel events due to unforeseen circumstances.</p>
                       <p>• Participants are responsible for their own belongings during the event.</p>
-                      <p>• By registering, you consent to the use of photographs/videos taken during the event for promotional purposes.</p>
                       <p>• Payment confirmation will be sent via email within 24-48 hours after verification.</p>
                     </div>
                   <label className="flex items-center cursor-pointer mt-4 p-3 rounded-xl bg-purple-900/20 hover:bg-purple-900/30 transition-colors">
