@@ -4,11 +4,12 @@ import Image from "next/image";
 
 
 const PreEvents = () => {
-  const posters = ["/1.jpg", "/2.jpg", "/3.jpg"];
+  const posters = ["/1.jpg", "/2.jpg", "/3.jpg","/4.jpg"];
 const links = [
   "https://tinyurl.com/DoodleQuest1",
   "https://bit.ly/trail_Quest",
   "https://tinyurl.com/StrikezoneDhyuthi",
+  "https://docs.google.com/forms/d/e/1FAIpQLSdE5lutguz9QgoKCiYwahY9CpP-e0xartBEuicgNdaMGFM8ZA/viewform?usp=send_form",
 ];
 
   const [current, setCurrent] = useState(0);
