@@ -7,7 +7,7 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // CONFIGURATION - Change these for different tracks
 // ============================================
 const TRACK_NAME = "Synkron";
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxd6FeczeZ9BjBXvz6ZZeibD4GGgL3B0Vw5lol2M4YBcqHYEDGpKnuhUlUiY_yMMFjo/exec";
 const UPI_ID = "mahreen.zuraiq@okhdfcbank";
 const UPI_NAME = "Mahreen Zuraiq";
 // Pricing configuration
