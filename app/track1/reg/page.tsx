@@ -39,7 +39,7 @@ export default function Track1Registration() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showQR, setShowQR] = useState(false);
 
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyY4JFqUuZT7H-M-JdjNPd4JblxZtJy_uxlLXpmgIEoA1c-t3obPGZ2fC1VfvBUaSJY/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxnriKRz2qy6aPW1nRnund3jxfvz05y7xfJSZ0gjIhwOYyV7SqpUqSuXA61xg1Ljm_F/exec";
 
   const pricing: Record<RegistrationType, number> = {
     "ieee+society": 299,
