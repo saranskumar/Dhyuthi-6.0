@@ -80,7 +80,7 @@ Conquer cell culturing
               </div>
 
               <a
-                href='https://dhyuthi.ieeesctsb.org/cellestro/reg'
+                href='#'
                 className='inline-flex items-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-purple-700 hover:to-purple-900 transform hover:scale-105 transition-all duration-300 shadow-lg'
               >
                 Register Now
@@ -159,7 +159,7 @@ Conquer cell culturing
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://dhyuthi.ieeesctsb.org/cellestro/reg"
+              href="#"
               className="inline-flex items-center justify-center bg-white text-purple-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Register Now
