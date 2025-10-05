@@ -7,7 +7,7 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // CONFIGURATION - Change these for different tracks
 // ============================================
 const TRACK_NAME = "Aigenix";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSgLB-vbVlCqs6k9SBzszLAVUmAPaEy4xc4ya4oE2KAOA3GlDNjHBdYuY-zowa4P4w6g/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkwx_iPYAXVcJogoLhJgmV4jzVfoSR32MnbTTQyMMK4J2RCdOoh1VPl1jUbK8_TSuv_A/exec";
 const UPI_ID = "athulchacko2017-3@okicici";
 const UPI_NAME = "Athul Chacko";
 
