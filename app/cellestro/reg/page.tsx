@@ -7,7 +7,7 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // CONFIGURATION - Change these for different tracks
 // ============================================
 const TRACK_NAME = "Cellestro";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw61Pt3PR83XjH3yXdoByi3ssG7CWdf1YWTIZrqSJIHlb7sQqwo_NBj8DSJ9PvhCQXz/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5hOrCPhR4Wjn-B3l_DH7x-wFooz1ODRc03qb4uH_yha7zNhSJqVLcZTvTurS-XXwG/exec";
 const UPI_ID = "adithyajikku17122002-1@oksbi";
 const UPI_NAME = "Adithya A S ";
 // Pricing configuration
