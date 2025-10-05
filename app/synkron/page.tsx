@@ -142,7 +142,7 @@ export default function Track1Page() {
       <div className="bg-purple-600/50 py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Join TRACK1?
+            Ready to Join  SYNKRON?
           </h2>
           <p className="text-xl text-purple-100 mb-8">
             Do not miss this opportunity to be part of the premier tech event of the
