@@ -6,16 +6,16 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // ============================================
 // CONFIGURATION - Change these for different tracks
 // ============================================
-const TRACK_NAME = "TRACK1";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzbMCvTQnGQAGz0I5nVt9q7roYzuK74bmtq3oT-akJIkqFWcguMRgL1FaPfOEjLHcqz/exec";
-const UPI_ID = "saranskumarwh@oksbi";
-const UPI_NAME = "Saran";
+const TRACK_NAME = "Aigenix";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyna-U3HalQRNdI-SxUGlT7qiJN2Oo0iKrTHbuxNHXo0Co5V4e4xHcW98K_aLnSXKg9/exec";
+const UPI_ID = "athulchacko2017-3@okicici";
+const UPI_NAME = "Athul Chacko";
 
 // Pricing configuration
 const PRICING = {
-  firstyr: 299,
-  ieeeOnly: 399,
-  nonIeee: 499,
+  firstyr: 899,
+  ieeeOnly: 799,
+  nonIeee: 1099,
 };
 // ============================================
 
