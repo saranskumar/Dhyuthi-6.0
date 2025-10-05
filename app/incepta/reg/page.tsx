@@ -6,10 +6,10 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // ============================================
 // CONFIGURATION - Change these for different tracks
 // ============================================
-const TRACK_NAME = "Aigenix";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpNNl-iDpBDb3hRlBCb-MyFDrkzXnmZBRCKWtaZ9T6W22DHDIyHCIapqm8q8a5BHMvLQ/exec";
-const UPI_ID = "athulchacko2017-3@okicici";
-const UPI_NAME = "Athul Chacko";
+const TRACK_NAME = "Incepta";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8FmtRoDc8kQCQluqAz5AaQkjcmqeTtAZw2Pk6Eg2RIBQdM8Zrf0Uh3Y-Z1-CLbKlWEA/exec";
+const UPI_ID = "devanarayansuniloffl@oksbi";
+const UPI_NAME = "Devanarayan S";
 
 // Pricing configuration
 const PRICING = {
