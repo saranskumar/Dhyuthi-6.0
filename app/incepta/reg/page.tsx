@@ -7,7 +7,7 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // CONFIGURATION - Change these for different tracks
 // ============================================
 const TRACK_NAME = "Incepta";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-WTO5sLW85BAM5bGC1wv6ZRupatV0cYgmb81DmQ5XNEpcFz5d7PE40MGdSrfXTbXmZw/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_mtpq4tNXSQn8mkTowYeKHB_zaPqA2WcTEb7POWlgz0HimQEYADs6gITz8_N7VGPiLQ/exec";
 const UPI_ID = "devanarayansuniloffl@oksbi";
 const UPI_NAME = "Devanarayan S";
 
