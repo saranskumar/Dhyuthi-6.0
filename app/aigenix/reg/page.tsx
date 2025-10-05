@@ -7,7 +7,7 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // CONFIGURATION - Change these for different tracks
 // ============================================
 const TRACK_NAME = "Aigenix";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkwx_iPYAXVcJogoLhJgmV4jzVfoSR32MnbTTQyMMK4J2RCdOoh1VPl1jUbK8_TSuv_A/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7UExkUfa3QQEk2AD4MNqZ6HbzTt_FBCweId2M_wB0BkWenx5JD9lYowyTXMXylqR-4w/exec";
 const UPI_ID = "athulchacko2017-3@okicici";
 const UPI_NAME = "Athul Chacko";
 
@@ -281,7 +281,8 @@ export default function Track1Registration() {
                 <p className="text-yellow-200">
                   <strong>Next Steps:</strong><br/>
                   We&apos;ll verify your payment and send confirmation via email within 24-48 hours.<br/>
-                  Please check your inbox (and spam folder) for updates.
+                  Please check your inbox (and spam folder) for updates.<br/>
+
                 </p>
               </div>
             </div>
