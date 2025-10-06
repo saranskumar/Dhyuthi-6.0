@@ -12,8 +12,8 @@ const UPI_ID = "adithyajikku17122002-1@oksbi";
 const UPI_NAME = "Adithya A S ";
 // Pricing configuration
 const PRICING = {
-  firstyr: 699,
-  ieeeOnly: 999,
+  firstyr: 999,
+  ieeeOnly: 869,
   nonIeee: 1199,
 };
 // ============================================
