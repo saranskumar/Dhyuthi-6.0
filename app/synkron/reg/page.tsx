@@ -8,8 +8,8 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // ============================================
 const TRACK_NAME = "Synkron";
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyyUxRjQR-PbJT2FlX1iihHyNKKpZYCosG20arSTtcZkPtsteUQ8tJXxXTXafzEboG/exec";
-const UPI_ID = "mahreen.zuraiq@okhdfcbank";
-const UPI_NAME = "Mahreen Zuraiq";
+const UPI_ID = "snehabijee2003@oksbi";
+const UPI_NAME = "Sneha";
 // Pricing configuration
 const PRICING = {
   firstyr: 999,
