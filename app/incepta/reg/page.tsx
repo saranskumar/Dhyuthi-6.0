@@ -13,9 +13,9 @@ const UPI_NAME = "Devanarayan S";
 
 // Pricing configuration
 const PRICING = {
-  firstyr: 899,
-  ieeeOnly: 799,
-  nonIeee: 1099,
+  firstyr: 869,
+  ieeeOnly: 999,
+  nonIeee: 1199,
 };
 // ============================================
 
