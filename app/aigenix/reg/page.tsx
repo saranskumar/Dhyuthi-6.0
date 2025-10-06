@@ -6,7 +6,7 @@ import { CalendarX } from "lucide-react";
 // ============================================
 // CONFIGURATION
 // ============================================
-const TRACK_NAME = "Synkron";
+const TRACK_NAME = "Aigenix";
 // ============================================
 
 
