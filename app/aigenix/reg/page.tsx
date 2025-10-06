@@ -6,15 +6,16 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // ============================================
 // CONFIGURATION - Change these for different tracks
 // ============================================
-const TRACK_NAME = "Cellestro";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytYHJ3UWqxUln_PU43DJ_YcqQ49s_5jLzdM3MwVdz_jA0XWSfmBX-Tbz-Xwf6eNkO4/exec";
-const UPI_ID = "adithyajikku17122002-1@oksbi";
-const UPI_NAME = "Adithya A S ";
+const TRACK_NAME = "Aigenix";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCG-6kJgWc8vds0DFXQsvk-GdVLsErdQQxhYH3tpoz_3DCzzpCRVLFp-xhPORKkVWyfA/exec";
+const UPI_ID = "athulchacko2017-2@okhdfcbank";
+const UPI_NAME = "Athul Chacko";
+
 // Pricing configuration
 const PRICING = {
-  firstyr: 899,
-  ieeeOnly: 799,
-  nonIeee: 1099,
+  firstyr: 999,
+  ieeeOnly: 869,
+  nonIeee: 1199,
 };
 // ============================================
 
@@ -280,7 +281,8 @@ export default function Track1Registration() {
                 <p className="text-yellow-200">
                   <strong>Next Steps:</strong><br/>
                   We&apos;ll verify your payment and send confirmation via email within 24-48 hours.<br/>
-                  Please check your inbox (and spam folder) for updates.
+                  Please check your inbox (and spam folder) for updates.<br/>
+
                 </p>
               </div>
             </div>

@@ -6,15 +6,15 @@ import { ArrowRight, Check, QrCode, Smartphone } from "lucide-react";
 // ============================================
 // CONFIGURATION - Change these for different tracks
 // ============================================
-const TRACK_NAME = "Cellestro";
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytYHJ3UWqxUln_PU43DJ_YcqQ49s_5jLzdM3MwVdz_jA0XWSfmBX-Tbz-Xwf6eNkO4/exec";
-const UPI_ID = "adithyajikku17122002-1@oksbi";
-const UPI_NAME = "Adithya A S ";
+const TRACK_NAME = "Synkron";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyyUxRjQR-PbJT2FlX1iihHyNKKpZYCosG20arSTtcZkPtsteUQ8tJXxXTXafzEboG/exec";
+const UPI_ID = "mahreen.zuraiq@okhdfcbank";
+const UPI_NAME = "Mahreen Zuraiq";
 // Pricing configuration
 const PRICING = {
-  firstyr: 899,
-  ieeeOnly: 799,
-  nonIeee: 1099,
+  firstyr: 999,
+  ieeeOnly: 869,
+  nonIeee: 1199,
 };
 // ============================================
 
