@@ -62,9 +62,9 @@ export const Timer = () => {
   if (eventStarted) {
     return (
       <div className="flex flex-col items-center justify-center h-screen w-full text-white font-mono text-center px-4 overflow-hidden">
-        <h1 className="text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3vw] font-extrabold bg-gradient-to-r from-[#6a06dd] via-[#8242dc] to-[#9348fc] bg-clip-text text-transparent animate-pulse leading-tight break-words">
+        <h1 className="text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3vw] font-extrabold bg-gradient-to-r from-[#a006dd] via-[#8242dc] to-[#9348fc] bg-clip-text text-transparent animate-pulse leading-tight break-words">
           {/* FIX 1: Replaced &nbsp; with regular spaces to allow wrapping */}
-          DHYUTHI&nbsp;6.0 IS LIVE NOW! 🎉
+          DHYUTHI&nbsp;6.0 <br /> IS LIVE NOW! 🎉
         </h1>
       
       </div>
