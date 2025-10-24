@@ -10,7 +10,7 @@ interface TimeLeft {
 }
 
 export const Timer = () => {
-  const eventDate = new Date("2025-10-24T16:30:00"); // Set your event date/time
+  const eventDate = new Date("2025-10-24T16:20:00");
 
   const calculateTimeLeft = (): TimeLeft => {
     const now = new Date();
@@ -61,55 +61,46 @@ export const Timer = () => {
 
   if (eventStarted) {
     return (
-      <div className="flex flex-col items-center justify-center text-white font-mono p-20 text-center">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent animate-pulse">
-          DHYUTHI&nbsp;6.0&nbsp;IS&nbsp;LIVE&nbsp;NOW!! 🎉
+      <div className="flex flex-col items-center justify-center min-h-screen text-white font-mono text-center px-4">
+        <h1 className="text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3vw] font-extrabold bg-gradient-to-r from-[#6a06dd] via-[#8242dc] to-[#9348fc] bg-clip-text text-transparent animate-pulse leading-tight break-words">
+          DHYUTHI&nbsp;6.0&nbsp;IS&nbsp;LIVE&nbsp;NOW! 🎉
         </h1>
-        <p className="text-lg sm:text-xl mt-6 text-purple-300 italic">
-          Let the innovation ignite ✨
-        </p>
+       
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-white font-mono p-8 sm:p-12 md:p-20 lg:p-40 pt-40">
-      <p className="text-base sm:text-lg mb-6 sm:mb-8 italic text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen text-white font-mono px-4 py-10 sm:py-16 md:py-24">
+      <p className="text-[4vw] sm:text-base md:text-lg mb-6 sm:mb-8 italic text-center text-purple-200">
         THE MUCH AWAITED EVENT WILL START IN
       </p>
 
-      <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold">
-        <div className="flex flex-col items-center">
-          <span>{format(timeLeft.days)}</span>
-          <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
-            Days
-          </span>
-        </div>
-        <span>:</span>
-        <div className="flex flex-col items-center">
-          <span>{format(timeLeft.hours)}</span>
-          <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
-            Hours
-          </span>
-        </div>
-        <span>:</span>
-        <div className="flex flex-col items-center">
-          <span>{format(timeLeft.minutes)}</span>
-          <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
-            Minutes
-          </span>
-        </div>
-        <span>:</span>
-        <div className="flex flex-col items-center">
-          <span>{format(timeLeft.seconds)}</span>
-          <span className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2">
-            Seconds
-          </span>
-        </div>
+      {/* Timer Section */}
+      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3.5vw] font-bold text-center leading-none">
+        {[
+          { label: "Days", value: format(timeLeft.days) },
+          { label: "Hours", value: format(timeLeft.hours) },
+          { label: "Minutes", value: format(timeLeft.minutes) },
+          { label: "Seconds", value: format(timeLeft.seconds) },
+        ].map((unit, index) => (
+          <React.Fragment key={unit.label}>
+            <div className="flex flex-col items-center min-w-[55px] sm:min-w-[70px]">
+              <span>{unit.value}</span>
+              <span className="text-[2.5vw] sm:text-xs md:text-base mt-1 text-purple-300">
+                {unit.label}
+              </span>
+            </div>
+            {index !== 3 && (
+              <span className="text-[6vw] sm:text-[5vw] md:text-[3.5vw] opacity-70">:</span>
+            )}
+          </React.Fragment>
+        ))}
       </div>
 
-      <div className="mt-8 text-center">
-        <p className="text-sm sm:text-base bg-[#9348fc] bg-clip-text text-transparent md:text-lg lg:text-xl">
+      {/* Footer line */}
+      <div className="mt-8 sm:mt-10 text-center max-w-[90%] sm:max-w-md md:max-w-xl">
+        <p className="text-[3vw] sm:text-sm md:text-base bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
           Fostering collaboration • innovation • diverse activities
         </p>
       </div>
