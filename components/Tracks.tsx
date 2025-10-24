@@ -24,7 +24,7 @@ const Tracks = () => {
             <div className='text-center font-medium'>
                 <p className='text-justify py-2 border-b mx-8 mt-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div> */}
-            <button  onClick={() => window.open("https://dhyuthi.ieeesctsb.org/aigenix", "_blank")} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
+            <button  onClick={() => (window.location.href = '/aigenix')} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
            Register Now
             </button>
           </div>
@@ -42,7 +42,7 @@ const Tracks = () => {
                 <p className='text-justify py-2 border-b mx-8 mt-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>*/}
 
-            <button  onClick={() => window.open("https://dhyuthi.ieeesctsb.org/cellestro", "_blank")} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
+            <button  onClick={() => (window.location.href = '/cellestro')}  className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
            Register Now
             </button>
           </div>
@@ -60,7 +60,7 @@ const Tracks = () => {
                 <p className='text-justify py-2 border-b mx-8 mt-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>*/}
 
-            <button  onClick={() => window.open("https://dhyuthi.ieeesctsb.org/incepta", "_blank")} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
+            <button  onClick={() => (window.location.href = '/incepta')} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
            Register Now
             </button>
           </div>
@@ -79,7 +79,7 @@ const Tracks = () => {
                 <p className='text-justify py-2 border-b mx-8 mt-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>*/}
 
-            <button  onClick={() => window.open("https://dhyuthi.ieeesctsb.org/synkron", "_blank")} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
+            <button  onClick={() => (window.location.href = '/synkron')} className="bg-gradient-to-r from-[#623e94] via-[#5519a7] to-[#9348fc] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-white">
            Register Now
             </button>
           </div>

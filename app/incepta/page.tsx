@@ -5,6 +5,24 @@ import Image from 'next/image';
  
 export default function Track1Page() {
  
+const speakers = [
+    {
+      name: 'Random girl',
+      title: 'AI Research Director',
+      company: 'TechCorp',
+      image:'/btmiss.jpg',
+        
+      topic: 'Future of Artificial Intelligence'
+    },
+    {
+      name: 'Random dude',
+      title: 'Senior Developer',
+      company: 'DevSolutions',
+     image:'/btsir.jpg',
+      topic: 'Building Scalable Applications'
+    },
+    
+  ]
 
 
   return (
@@ -80,7 +98,7 @@ export default function Track1Page() {
               </div>
 
               <a
-                href='https://dhyuthi.ieeesctsb.org/incepta/reg'
+                href='/incepta/reg'
                 className='inline-flex items-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-purple-700 hover:to-purple-900 transform hover:scale-105 transition-all duration-300 shadow-lg'
               >
                 Register Now
@@ -140,7 +158,42 @@ export default function Track1Page() {
       </div>
 </section>
       
+       {/* Speakers */}
+            <div className='py-20'>
+              <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+                <div className='text-center mb-16'>
+                  <h2 className='text-4xl font-bold text-white mb-4'>Featured Speakers</h2>
+                  <p className='text-xl text-purple-200'>
+                    Meet the industry experts who will be sharing their insights
+                  </p>
+                </div>
       
+                    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 mb-12">
+        {speakers.map((speaker, index) => (
+          <div
+            key={index}
+            className="bg-black/40 backdrop-blur-md rounded-xl shadow-lg hover:shadow-purple-500/30 transition-shadow duration-300 overflow-hidden border border-purple-500/10"
+          >
+           <div className="relative w-full h-64">
+        <Image
+          src={speaker.image}
+          alt={speaker.name}
+          fill
+          className="object-cover rounded-t-xl"
+        />
+      </div>
+      
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-white mb-1">{speaker.name}</h3>
+              <p className="text-purple-400 font-medium mb-2">{speaker.title}</p>
+              <p className="text-purple-200 text-sm mb-3">{speaker.company}</p>
+              <p className="text-purple-100 font-medium">{speaker.topic}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+              </div>
+            </div> 
 
       {/* Call-to-action at the bottom */}
       <div className="bg-purple-600/50 py-20">
@@ -155,7 +208,7 @@ export default function Track1Page() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://dhyuthi.ieeesctsb.org/incepta/reg"
+              href="/incepta/reg"
               className="inline-flex items-center justify-center bg-white text-purple-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Register Now
