@@ -10,7 +10,7 @@ interface TimeLeft {
 }
 
 export const Timer = () => {
-  const eventDate = new Date("2025-10-24T16:20:00");
+  const eventDate = new Date("2025-10-24T16:30:00");
 
   const calculateTimeLeft = (): TimeLeft => {
     const now = new Date();
@@ -61,23 +61,25 @@ export const Timer = () => {
 
   if (eventStarted) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen text-white font-mono text-center px-4">
+      <div className="flex flex-col items-center justify-center h-screen w-full text-white font-mono text-center px-4 overflow-hidden">
         <h1 className="text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3vw] font-extrabold bg-gradient-to-r from-[#6a06dd] via-[#8242dc] to-[#9348fc] bg-clip-text text-transparent animate-pulse leading-tight break-words">
-          DHYUTHI&nbsp;6.0&nbsp;IS&nbsp;LIVE&nbsp;NOW! 🎉
+          {/* FIX 1: Replaced &nbsp; with regular spaces to allow wrapping */}
+          DHYUTHI&nbsp;6.0 IS LIVE NOW! 🎉
         </h1>
-       
+      
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-white font-mono px-4 py-10 sm:py-16 md:py-24">
-      <p className="text-[4vw] sm:text-base md:text-lg mb-6 sm:mb-8 italic text-center text-purple-200">
+    <div className="flex flex-col items-center justify-center h-screen w-full text-white font-mono text-center px-4 overflow-hidden">
+      <p className="text-[4vw] sm:text-base md:text-lg mb-4 sm:mb-6 italic text-purple-200">
         THE MUCH AWAITED EVENT WILL START IN
       </p>
 
       {/* Timer Section */}
-      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 text-[8vw] sm:text-[6vw] md:text-[4vw] lg:text-[3.5vw] font-bold text-center leading-none">
+      {/* FIX 2: Removed 'flex-wrap' to force timer onto one line */}
+      <div className="flex justify-center items-center gap-2 sm:gap-4 md:gap-6 text-[9vw] sm:text-[6vw] md:text-[4.5vw] lg:text-[3.5vw] font-bold leading-none">
         {[
           { label: "Days", value: format(timeLeft.days) },
           { label: "Hours", value: format(timeLeft.hours) },
@@ -87,19 +89,20 @@ export const Timer = () => {
           <React.Fragment key={unit.label}>
             <div className="flex flex-col items-center min-w-[55px] sm:min-w-[70px]">
               <span>{unit.value}</span>
-              <span className="text-[2.5vw] sm:text-xs md:text-base mt-1 text-purple-300">
+              <span className="text-[3vw] sm:text-xs md:text-base mt-1 text-purple-300">
                 {unit.label}
               </span>
             </div>
             {index !== 3 && (
-              <span className="text-[6vw] sm:text-[5vw] md:text-[3.5vw] opacity-70">:</span>
+              <span className="text-[6vw] sm:text-[4vw] md:text-[3.5vw] opacity-70">
+                :
+              </span>
             )}
           </React.Fragment>
         ))}
       </div>
 
-      {/* Footer line */}
-      <div className="mt-8 sm:mt-10 text-center max-w-[90%] sm:max-w-md md:max-w-xl">
+      <div className="mt-6 sm:mt-8 max-w-[90%] sm:max-w-md md:max-w-xl">
         <p className="text-[3vw] sm:text-sm md:text-base bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
           Fostering collaboration • innovation • diverse activities
         </p>
