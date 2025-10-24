@@ -4,17 +4,7 @@ import { Calendar, MapPin,  Users, ArrowRight,  Network } from 'lucide-react'
 import Image from 'next/image';
  
 export default function Track1Page() {
-   const speakers = [
-    {
-      name: 'Rohith Manikandan K P',
-      title: 'HAC ComSoc & AI ENGINEER',
-      company: 'ACSIA Technologies',
-      image:'/rohit.jpg',
-        
-    },
-  
-    
-  ]
+   
 
 
   return (
@@ -145,50 +135,6 @@ export default function Track1Page() {
       </div>
 </section>
         
- {/* Speakers */}
-<div className="py-20">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-white mb-4">Featured Speaker</h2>
-      <p className="text-xl text-purple-200">
-        Meet the industry expert who will be sharing their insights
-      </p>
-    </div>
-
-    <div
-      className={`grid gap-8 mb-12 ${
-        speakers.length === 1
-          ? "grid-cols-1 justify-items-center"
-          : speakers.length === 2
-          ? "md:grid-cols-2 justify-items-center"
-          : "md:grid-cols-3"
-      }`}
-    >
-      {speakers.map((speaker, index) => (
-        <div
-          key={index}
-          className="bg-black/40 backdrop-blur-md rounded-xl shadow-lg hover:shadow-purple-500/30 transition-shadow duration-300 overflow-hidden border border-purple-500/10 max-w-sm w-full"
-        >
-          <div className="relative w-full h-64">
-            <Image
-              src={speaker.image}
-              alt={speaker.name}
-              fill
-              className="object-cover rounded-t-xl"
-            />
-          </div>
-
-          <div className="p-6 text-center">
-            <h3 className="text-xl font-bold text-white mb-1">{speaker.name}</h3>
-            <p className="text-purple-400 font-medium mb-2">{speaker.title}</p>
-            <p className="text-purple-200 text-sm mb-3">{speaker.company}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
- 
 
       
 
