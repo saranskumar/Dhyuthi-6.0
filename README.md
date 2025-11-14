@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dhyuthi 6.0 – Official Event Website
 
-## Getting Started
+Official website for Dhyuthi 6.0, the flagship multi-track technical fest organized by IEEE SCT Student Branch.  
+The site provides event details, registrations, schedules, pre-events, and accommodation info with a fast and responsive UI.
 
-First, run the development server:
+## 🚀 Features
+- Dynamic hero + countdown
+- Event tracks overview
+- Workshops & competitions listing
+- Pre-event highlights
+- Team & sponsorship sections
+- SEO-optimized structure
+- Fully responsive design
+- Lazy-loaded, optimized images
 
-```bash
+## 🛠️ Tech Stack
+**Frontend**
+- Next.js / React  
+- Tailwind CSS  
+- Framer Motion / GSAP (optional)
+
+**Backend (if applicable)**
+- Firebase / Supabase  
+- Node/Express APIs
+
+**Deployment**
+- Vercel / Netlify
+
+## 📁 Project Structure
+.
+├── public/          # Static assets
+├── components/      # UI components
+├── pages/           # Routes & main sections
+├── styles/          # Global styles
+├── data/            # Event metadata
+└── utils/           # Helpers & hooks
+
+## ⚙️ Getting Started
+
+### 1. Clone
+git clone https://github.com/<your-username>/dhyuthi-website.git
+cd dhyuthi-website
+
+### 2. Install dependencies
+npm install
+
+### 3. Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4. Production build
+npm run build
+npm start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Environment Variables
+Create a `.env.local` file if needed:
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FORM_ENDPOINT=
+NEXT_PUBLIC_ANALYTICS_ID=
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Design Principles
+- Clean, minimalistic UI  
+- High-quality visuals  
+- Smooth animations without heavy performance costs  
+- Clear CTAs for seamless user flow  
 
-## Learn More
+## 📦 Deployment
+Continuous deployments via Vercel (recommended).
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔗 Live Website
+https://dhyuthi.ieeesctsb.org
