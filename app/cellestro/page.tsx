@@ -87,6 +87,7 @@ Conquer cell culturing
               >
                 Registration Closed
                 
+                
               </span>
             </div>
           </div>
