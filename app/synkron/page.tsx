@@ -83,7 +83,6 @@ export default function Track1Page() {
                 tabIndex={-1}
               >
                 Registration Closed
-                
               </span>
             </div>
           </div>
