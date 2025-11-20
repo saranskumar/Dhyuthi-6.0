@@ -162,7 +162,6 @@ export default function Track1Page() {
               className="inline-flex items-center justify-center bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg opacity-90 cursor-not-allowed shadow-lg"
             >
               Registration Closed
-
             </button>
 
             <button
