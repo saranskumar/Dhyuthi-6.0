@@ -85,13 +85,16 @@ export default function Track1Page() {
                 </span>
               </div>
 
-              <a
-                href='/aigenix/reg'
-                className='inline-flex items-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-purple-700 hover:to-purple-900 transform hover:scale-105 transition-all duration-300 shadow-lg'
+              <span
+                role="status"
+                aria-disabled="true"
+                title="Registration Closed"
+                className="inline-flex items-center bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg opacity-90 cursor-not-allowed shadow-inner"
+                tabIndex={-1}
               >
-                Register Now
-                <ArrowRight className='ml-2 w-5 h-5' />
-              </a>
+                Registration Closed
+                
+              </span>
             </div>
           </div>
         </div>
@@ -204,13 +207,12 @@ export default function Track1Page() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/aigenix/reg"
-              className="inline-flex items-center justify-center bg-white text-purple-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transform hover:scale-105 transition-all duration-300 shadow-lg"
+            <button
+              disabled
+              className="inline-flex items-center justify-center bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg opacity-90 cursor-not-allowed shadow-lg"
             >
-              Register Now
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
+              Registration Closed
+            </button>
 
             <button
               onClick={() => {
