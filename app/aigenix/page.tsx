@@ -87,7 +87,6 @@ export default function Track1Page() {
 
               <span
                 role="status"
-                aria-disabled="true"
                 title="Registration Closed"
                 className="inline-flex items-center bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg opacity-90 cursor-not-allowed shadow-inner"
                 tabIndex={-1}
