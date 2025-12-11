@@ -15,8 +15,8 @@ import {
     Check,
     Download,
     Eye,
-    ArrowRight
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 // Helper to convert export URL to view URL
 const getViewUrl = (url: string) => {
@@ -31,28 +31,37 @@ const getViewUrl = (url: string) => {
     return url;
 };
 
+// Strong types
+type CertType = "winner" | "competition" | "workshop";
+
+interface CertificateData {
+    name: string;
+    ticketId?: string;
+    email?: string;
+    phone?: string;
+    winner?: string; // google drive url or undefined
+    competition?: string;
+    workshop?: string;
+}
+
 export default function CertificateFinder() {
     const [query, setQuery] = useState("");
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState<any>(null);
+    const [data, setData] = useState<CertificateData | null>(null);
     const [error, setError] = useState("");
 
-    const [showFallback, setShowFallback] = useState(false);
-    const [downloadingType, setDownloadingType] = useState<string | null>(null);
+    const [downloadingType, setDownloadingType] = useState<CertType | null>(null);
 
-    const [downloaded, setDownloaded] = useState<Record<string, boolean>>({
+    const [downloaded, setDownloaded] = useState<Record<CertType, boolean>>({
         winner: false,
         competition: false,
         workshop: false,
     });
 
-    const [trackData, setTrackData] = useState<any[]>([]);
-    const [loadingTrack, setLoadingTrack] = useState(false);
-
     const API =
         "https://script.google.com/macros/s/AKfycbzzEF3cmK_uau99YaaMs-WBmBvvyGNK5ZTBC9wQXxU12QlM6JRbbaIGqpYCowBNuWtfNQ/exec";
 
-    async function forceDownload(url: string, type: string) {
+    async function forceDownload(url: string, type: CertType) {
         if (!url) return;
 
         // Extract ID
@@ -87,7 +96,7 @@ export default function CertificateFinder() {
             }
 
             // Convert Base64 to Blob
-            const binaryString = window.atob(json.fileData);
+            const binaryString = window.atob(json.fileData as string);
             const len = binaryString.length;
             const bytes = new Uint8Array(len);
             for (let i = 0; i < len; i++) {
@@ -155,7 +164,17 @@ export default function CertificateFinder() {
             if (!result.success) {
                 setError(result.error || "No certificates found for the provided details.");
             } else {
-                setData(result);
+                // map API result to CertificateData, while keeping extra fields if they match
+                const mapped: CertificateData = {
+                    name: result.name,
+                    ticketId: result.ticketId,
+                    email: result.email,
+                    phone: result.phone,
+                    winner: result.winner,
+                    competition: result.competition,
+                    workshop: result.workshop,
+                };
+                setData(mapped);
             }
         } catch (err) {
             console.error("Search error:", err);
@@ -166,7 +185,19 @@ export default function CertificateFinder() {
     }
 
     // Reusable download button component
-    function DownloadButton({ url, label, icon: Icon, color, type }: any) {
+    function DownloadButton({
+        url,
+        label,
+        icon: Icon,
+        color,
+        type
+    }: {
+        url?: string;
+        label: string;
+        icon: LucideIcon;
+        color: { bg: string; text: string; border: string; hover: string; icon: string };
+        type: CertType;
+    }) {
         if (!url) return null;
 
         const isDone = downloaded[type];
@@ -279,7 +310,7 @@ export default function CertificateFinder() {
 
                 {/* Result Card */}
                 {data && (
-                    <div className="mt-2 p-6 bg-white/5 border border-white/10 rounded-3xl shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <div className="mt-2 p-6 bg.white/5 border border-white/10 rounded-3xl shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-500">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-md border border-white/10">
                                 <CheckCircle className="w-7 h-7 text-white" />
