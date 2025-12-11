@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Image Finder</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+    }
+
+    .card {
+      width: 420px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin: 0 0 15px 0;
+      font-size: 24px;
+      text-align: center;
+      color: #333;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #004bcc;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+
+    .image-item {
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fafafa;
+    }
+
+    .image-item a {
+      color: #0066ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    .img-preview {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 6px;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .loader {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>Student Image Finder</h2>
+
+    <div class="input-group">
+      <input id="q" type="text" placeholder="Enter phone or email" />
+      <button id="btn">Search</button>
+    </div>
+
+    <div id="loader" class="loader" style="display:none;">Searching...</div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbyRhdRviX7C4Ga69lbi2PrYLBRyF-IvtF1se4Maz3yMa9spIgKYCgwRsJyemvxISyI17g/exec";
+
+    document.getElementById("btn").onclick = search;
+
+    async function search() {
+      const q = document.getElementById("q").value.trim();
+      const resultBox = document.getElementById("result");
+      const loader = document.getElementById("loader");
+
+      if (!q) return;
+
+      resultBox.innerHTML = "";
+      loader.style.display = "block";
+
+      const resp = await fetch(`${SCRIPT_URL}?q=${encodeURIComponent(q)}`);
+      const data = await resp.json();
+
+      loader.style.display = "none";
+
+      if (!data.success) {
+        resultBox.innerHTML = `<div class="error">${data.message}</div>`;
+        return;
+      }
+
+      resultBox.innerHTML = `<h3>Student: ${data.studentName}</h3>`;
+
+      if (!data.images || data.images.length === 0) {
+        resultBox.innerHTML += `<div class="error">No images found.</div>`;
+        return;
+      }
+
+      data.images.forEach((img) => {
+        resultBox.innerHTML += `
+          <div class="image-item">
+            <img class="img-preview" src="${img.directUrl}" alt="${img.name}" />
+            <div>${img.name}</div>
+            <a href="${img.directUrl}" download="${img.name}">Download</a>
+          </div>
+        `;
+      });
+    }
+  </script>
+
+</body>
+</html>
